@@ -3,7 +3,9 @@ package com.diviso.graeshoppe.domain;
 
 
 import java.time.ZonedDateTime;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A UserRatingReview.
@@ -12,9 +14,7 @@ import java.util.Objects;
 public class UserRatingReview {
 
   
-    
-  
-    private Long id;
+     private Long id;
 
 
     private String userName;
@@ -26,6 +26,19 @@ public class UserRatingReview {
 
 
     private ZonedDateTime date;
+    
+private Set<Reply> replies = new HashSet<>();
+    
+    
+
+    public Set<Reply> getReplies() {
+		return replies;
+	}
+
+	public void setReplies(Set<Reply> replies) {
+		this.replies = replies;
+	}
+    
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -117,6 +130,7 @@ public class UserRatingReview {
             ", rating=" + getRating() +
             ", review='" + getReview() + "'" +
             ", date='" + getDate() + "'" +
+            ", reply='" + getReplies() + "'" +
             "}";
     }
 }

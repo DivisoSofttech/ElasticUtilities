@@ -29,7 +29,7 @@ public class Customer {
 
 	private Long mobileNumber;
 
-	private Long phoneCode;
+	private Integer phoneCode;
 
 	private Long telephone;
 
@@ -110,16 +110,16 @@ public class Customer {
 		this.mobileNumber = mobileNumber;
 	}
 
-	public Long getPhoneCode() {
+	public Integer getPhoneCode() {
 		return phoneCode;
 	}
 
-	public Customer phoneCode(Long phoneCode) {
+	public Customer phoneCode(Integer phoneCode) {
 		this.phoneCode = phoneCode;
 		return this;
 	}
 
-	public void setPhoneCode(Long phoneCode) {
+	public void setPhoneCode(Integer phoneCode) {
 		this.phoneCode = phoneCode;
 	}
 

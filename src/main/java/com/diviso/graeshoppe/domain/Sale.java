@@ -1,7 +1,5 @@
 package com.diviso.graeshoppe.domain;
 
-
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -15,32 +13,25 @@ import java.util.Set;
  */
 
 @Document(indexName = "sale")
-public class Sale  {
+public class Sale {
 
-    private static final long serialVersionUID = 1L;
-    
-    @Id
-    
-    private Long id;
+	private static final long serialVersionUID = 1L;
 
- 
-    private String userId;
+	@Id
 
-    private Long customerId;
+	private Long id;
 
-  
-    private Instant date;
+	private String userId;
 
-  
-    private Double grandTotal;
-    
-    
-    
-private Set<TicketLine> ticketLines = new HashSet<>();
-    
-    
+	private Long customerId;
 
-    public Set<TicketLine> getTicketLines() {
+	private Instant date;
+
+	private Double grandTotal;
+
+	private Set<TicketLine> ticketLines = new HashSet<>();
+
+	public Set<TicketLine> getTicketLines() {
 		return ticketLines;
 	}
 
@@ -48,87 +39,88 @@ private Set<TicketLine> ticketLines = new HashSet<>();
 		this.ticketLines = ticketLines;
 	}
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
-    public Long getId() {
-        return id;
-    }
+	// jhipster-needle-entity-add-field - JHipster will add fields here, do not
+	// remove
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getUserId() {
-        return userId;
-    }
+	public String getUserId() {
+		return userId;
+	}
 
-    public Sale userId(String userId) {
-        this.userId = userId;
-        return this;
-    }
+	public Sale userId(String userId) {
+		this.userId = userId;
+		return this;
+	}
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
-    public Long getCustomerId() {
-        return customerId;
-    }
+	public Long getCustomerId() {
+		return customerId;
+	}
 
-    public Sale customerId(Long customerId) {
-        this.customerId = customerId;
-        return this;
-    }
+	public Sale customerId(Long customerId) {
+		this.customerId = customerId;
+		return this;
+	}
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
 
-    public Instant getDate() {
-        return date;
-    }
+	public Instant getDate() {
+		return date;
+	}
 
-    public Sale date(Instant date) {
-        this.date = date;
-        return this;
-    }
+	public Sale date(Instant date) {
+		this.date = date;
+		return this;
+	}
 
-    public void setDate(Instant date) {
-        this.date = date;
-    }
+	public void setDate(Instant date) {
+		this.date = date;
+	}
 
-    public Double getGrandTotal() {
-        return grandTotal;
-    }
+	public Double getGrandTotal() {
+		return grandTotal;
+	}
 
-    public Sale grandTotal(Double grandTotal) {
-        this.grandTotal = grandTotal;
-        return this;
-    }
+	public Sale grandTotal(Double grandTotal) {
+		this.grandTotal = grandTotal;
+		return this;
+	}
 
-    public void setGrandTotal(Double grandTotal) {
-        this.grandTotal = grandTotal;
-    }
-    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
+	public void setGrandTotal(Double grandTotal) {
+		this.grandTotal = grandTotal;
+	}
+	// jhipster-needle-entity-add-getters-setters - JHipster will add getters and
+	// setters here, do not remove
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Sale sale = (Sale) o;
-        if (sale.getId() == null || getId() == null) {
-            return false;
-        }
-        return Objects.equals(getId(), sale.getId());
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		Sale sale = (Sale) o;
+		if (sale.getId() == null || getId() == null) {
+			return false;
+		}
+		return Objects.equals(getId(), sale.getId());
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(getId());
+	}
 
-  
 }

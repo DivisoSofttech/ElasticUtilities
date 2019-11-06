@@ -25,7 +25,7 @@ public class Store {
 
 	private Double totalRating;
 
-	private String location;
+	private String latlon;
 
 	private String locationName;
 
@@ -43,7 +43,7 @@ public class Store {
 
 	private Instant maxDeliveryTime;
 
-	private String pincode;
+	private String postCode;
 
 	private String houseNumber;
 

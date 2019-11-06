@@ -1,0 +1,106 @@
+[{
+	"namespace":"com.diviso.graeshoppe.store.avro",
+	"type":"record",
+	"name":"Banner",
+	"fields":[
+		{"name":"id","type":["null","long"]},
+		 {"name":"file","type":"bytes","default":"\u00FF"},
+		{"name":"fileContentType","type":["null","string"],"default": null}
+		]
+	},
+	 {
+	"namespace":"com.diviso.graeshoppe.store.avro",
+	"type":"record",
+	"name":"Reply",
+	"fields":[
+		{"name":"id","type":["null","long"]},
+		{"name":"userName","type":["null","string"]},
+		{"name":"reply","type":["null","string"],"default": null},
+		{"name":"date","type":"long","logicalType":"date"}
+		
+		]
+	},
+	
+	
+    {
+	"namespace":"com.diviso.graeshoppe.store.avro",
+	"type":"record",
+	"name":"UserRatingReview",
+	"fields":[
+		{"name":"id","type":["null","long"]},
+		{"name":"userName","type":["null","string"]},
+		{"name":"review","type":["null","string"],"default": null},
+		{"name":"date","type":"long","logicalType":"date"},
+		 {"name":"replies","type":{"type":"array","items":"com.diviso.graeshoppe.store.avro.Reply"}}
+		]
+	},
+
+    {
+	"namespace":"com.diviso.graeshoppe.store.avro",
+	"type":"record",
+	"name":"DeliveryInfo",
+	"fields":[
+		{"name":"id","type":["null","long"]},
+		{"name":"startingTime","type":"long","logicalType":"date"},
+		{"name":"endTime","type":"long","logicalType":"date"},
+		{"name":"typeName","type":["null","string"],"default": null}
+	]
+	},
+ 
+	{
+	"namespace":"com.diviso.graeshoppe.store.avro",
+	"type":"record",
+	"name":"StoreType",
+	"fields":[
+		{"name":"id","type":["null","long"]},
+		{"name":"name","type":["null","string"],"default": null}
+	]
+	},
+	
+	{
+	"namespace":"com.diviso.graeshoppe.store.avro",
+	"type":"record",
+	"name":"store",
+	"fields":[
+		{"name":"id","type":["null","long"]},
+		{"name":"regNo","type":["null","string"]},
+		{"name":"name","type":["null","string"],"default": null},
+		{"name":"image","type":"bytes","default":"\u00FF"},
+		{"name":"imageContentType","type":["null","string"],"default": null},
+		{"name":"totalRating","type":["null","double"],"default": 0.0},
+		{"name":"latLon","type":["null","string"],"default": null},
+		{"name":"locationName","type":["null","string"],"default": null},
+		{"name":"mobileNumber","type":["null","long"],"default": null},
+		{"name":"openingTime","type":"long","logicalType":"date"},
+		{"name":"email","type":["null","string"],"default": null},
+		{"name":"closingTime","type":"long","logicalType":"date"},
+		{"name":"info","type":["null","string"],"default": null},
+		{"name":"minAmount","type":["null","double"],"default": 0.0},
+		{"name":"maxDeliveryTime","type":"long","logicalType":"date"},
+		{"name":"postCode","type":["null","string"],"default": null},
+		{"name":"houseNumber","type":["null","string"],"default": null},
+		{"name":"city","type":["null","string"],"default": null},
+		{"name":"state","type":["null","string"],"default": null},
+		
+		{"name":"street","type":["null","string"],"default": null},
+		{"name":"landmark","type":["null","string"],"default": null},
+		
+		{"name":"addressType","type":["null","string"],"default": null},
+		
+		{"name":"deliveryCharge","type":["null","double"],"default": 0.0},
+		{"name":"serviceCharge","type":["null","double"],"default": 0.0},
+		
+		{"name":"orderAcceptType","type":["null","string"],"default": null},
+		{"name":"propreitorName","type":["null","string"],"default": null}
+	    {"name":"banners","type":{"type":"array","items":"com.diviso.graeshoppe.store.avro.Banner"}},
+	    {"name":"userRatingReviews","type":{"type":"array","items":"com.diviso.graeshoppe.store.avro.UserRatingReview"}},
+	    {"name":"deliveryInfos","type":{"type":"array","items":"com.diviso.graeshoppe.store.avro.DeliveryInfo"}},
+	    {"name":"StoreTypes","type":{"type":"array","items":"com.diviso.graeshoppe.store.avro.StoreType"}}
+		]
+	}
+	
+	
+	
+	
+	
+]

@@ -32,6 +32,7 @@ public class EntryLineItem implements Serializable {
    
     private String description;
     
+    private Long productId;
     
     private String reference;
 
@@ -72,11 +73,7 @@ public class EntryLineItem implements Serializable {
     private Double storageCost;
 
     
-    private Double sellingPrice;
-
-   
-    private Double buyPrice;
-
+  
    
     private Double discountRate;
 
@@ -124,7 +121,7 @@ public class EntryLineItem implements Serializable {
     private String country;
 
   
-    private String zipcode;
+    private String postCode;
     
 	private Set<Label> labels = new HashSet<>();
     
@@ -140,7 +137,15 @@ public class EntryLineItem implements Serializable {
 
 
 
-    public String getReference() {
+    public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
+
+	public String getReference() {
         return reference;
     }
 
@@ -261,25 +266,7 @@ public class EntryLineItem implements Serializable {
         this.storageCost = storageCost;
     }
 
-    public Double getSellingPrice() {
-        return sellingPrice;
-    }
-
-
-    public void setSellingPrice(Double sellingPrice) {
-        this.sellingPrice = sellingPrice;
-    }
-
-    public Double getBuyPrice() {
-        return buyPrice;
-    }
-
- 
-
-    public void setBuyPrice(Double buyPrice) {
-        this.buyPrice = buyPrice;
-    }
-
+   
     public Double getDiscountRate() {
         return discountRate;
     }
@@ -424,12 +411,12 @@ public class EntryLineItem implements Serializable {
     }
 
     public String getZipcode() {
-        return zipcode;
+        return postCode;
     }
 
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+    public void setZipcode(String postCode) {
+        this.postCode = postCode;
     }
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -509,13 +496,13 @@ public class EntryLineItem implements Serializable {
 				+ imageContentType + ", isActive=" + isActive + ", sku=" + sku + ", idpCode=" + idpCode
 				+ ", isServiceItem=" + isServiceItem + ", isAuxilaryItem=" + isAuxilaryItem + ", minQuantityLevel="
 				+ minQuantityLevel + ", maxQuantityLevel=" + maxQuantityLevel + ", storageCost=" + storageCost
-				+ ", sellingPrice=" + sellingPrice + ", buyPrice=" + buyPrice + ", discountRate=" + discountRate
+				+ ",  discountRate=" + discountRate
 				+ ", manufacturerName=" + manufacturerName + ", brandName=" + brandName + ", unit=" + unit
 				+ ", categoryName=" + categoryName + ", categoryImage=" + Arrays.toString(categoryImage)
 				+ ", categoryImageContentType=" + categoryImageContentType + ", categoryDescription="
 				+ categoryDescription + ", locationName=" + locationName + ", latLon=" + latLon + ", addressLine1="
 				+ addressLine1 + ", addressLine2=" + addressLine2 + ", city=" + city + ", state=" + state + ", country="
-				+ country + ", zipcode=" + zipcode + ", labels=" + labels + "]";
+				+ country + ", postCode=" + postCode + ", labels=" + labels + "]";
 	}
 
   

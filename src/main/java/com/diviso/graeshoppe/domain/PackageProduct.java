@@ -44,10 +44,6 @@ public class PackageProduct {
 
 	private Double storageCost;
 
-	private Double sellingPrice;
-
-	private Double buyPrice;
-
 	private Double discountRate;
 
 	private String manufacturerName;
@@ -130,7 +126,6 @@ public class PackageProduct {
 		return image;
 	}
 
-
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
@@ -207,21 +202,7 @@ public class PackageProduct {
 		this.storageCost = storageCost;
 	}
 
-	public Double getSellingPrice() {
-		return sellingPrice;
-	}
-
-	public void setSellingPrice(Double sellingPrice) {
-		this.sellingPrice = sellingPrice;
-	}
-
-	public Double getBuyPrice() {
-		return buyPrice;
-	}
-
-	public void setBuyPrice(Double buyPrice) {
-		this.buyPrice = buyPrice;
-	}
+	
 
 	public Double getDiscountRate() {
 		return discountRate;
@@ -387,8 +368,7 @@ public class PackageProduct {
 				+ showInCatalogue + ", image=" + Arrays.toString(image) + ", imageContentType=" + imageContentType
 				+ ", isActive=" + isActive + ", sku=" + sku + ", idpCode=" + idpCode + ", isServiceItem="
 				+ isServiceItem + ", isAuxilaryItem=" + isAuxilaryItem + ", minQuantityLevel=" + minQuantityLevel
-				+ ", maxQuantityLevel=" + maxQuantityLevel + ", storageCost=" + storageCost + ", sellingPrice="
-				+ sellingPrice + ", buyPrice=" + buyPrice + ", discountRate=" + discountRate + ", manufacturerName="
+				+ ", maxQuantityLevel=" + maxQuantityLevel + ", storageCost=" + storageCost + ", discountRate=" + discountRate + ", manufacturerName="
 				+ manufacturerName + ", brandName=" + brandName + ", unit=" + unit + ", categoryName=" + categoryName
 				+ ", categoryImage=" + Arrays.toString(categoryImage) + ", categoryImageContentType="
 				+ categoryImageContentType + ", categoryDescription=" + categoryDescription + ", locationName="

@@ -13,15 +13,7 @@ import java.util.Set;
 public class StockEntry {
 
 	private Long id;
-
-	private String reasonName;
-
-	private String reasonDescription;
-
-	private String locationName;
-
-	private String latLon;
-
+	
 	private String idpCode;
 
 	private String reference;
@@ -29,7 +21,18 @@ public class StockEntry {
 	private LocalDate date;
 
 	private String description;
+//Reason entity
+	private Long reasonId;
 
+	private String reasonName;
+
+	private String reasonDescription;
+//location entity
+	private String locationName;
+
+	private String latLon;
+
+	
 	private Set<EntryLineItem> entryLineItems = new HashSet<>();
 
 	// jhipster-needle-entity-add-field - JHipster will add fields here, do not
@@ -148,6 +151,14 @@ public class StockEntry {
 	// jhipster-needle-entity-add-getters-setters - JHipster will add getters and
 	// setters here, do not remove
 
+	public Long getReasonId() {
+		return reasonId;
+	}
+
+	public void setReasonId(Long reasonId) {
+		this.reasonId = reasonId;
+	}
+
 	public Set<EntryLineItem> getTax() {
 		return entryLineItems;
 	}
@@ -178,10 +189,12 @@ public class StockEntry {
 
 	@Override
 	public String toString() {
-		return "StockEntry [id=" + id + ", reasonName=" + reasonName + ", reasonDescription=" + reasonDescription
-				+ ", locationName=" + locationName + ", latLon=" + latLon + ", idpCode=" + idpCode + ", reference="
-				+ reference + ", date=" + date + ", description=" + description + ", entryLineItems=" + entryLineItems
-				+ "]";
+		return "StockEntry [id=" + id + ", idpCode=" + idpCode + ", reference=" + reference + ", date=" + date
+				+ ", description=" + description + ", reasonId=" + reasonId + ", reasonName=" + reasonName
+				+ ", reasonDescription=" + reasonDescription + ", locationName=" + locationName + ", latLon=" + latLon
+				+ ", entryLineItems=" + entryLineItems + "]";
 	}
+
+	
 
 }
