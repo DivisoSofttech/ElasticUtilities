@@ -25,6 +25,7 @@ eureka:
     client:
         service-url:
             defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
+        enabled: false
 
 spring:
     profiles:
@@ -41,11 +42,44 @@ spring:
     jackson:
         serialization:
             indent-output: true
+    cloud:
+        stream:
+            kafka:
+                binder:
+                    brokers: dev.servers.divisosofttech.com
+                    zk-nodes: dev.servers.divisosofttech.com
+                streams:
+                  binder:
+                    brokers: dev.servers.divisosofttech.com
+                    configuration:
+                      schema.registry.url: http://dev.servers.divisosofttech.com:8081
+                      commit.interval.ms: 1000
+                      default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                      default.value.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde 
+                  bindings:
+                    sensor:
+                      consumer:
+                           keySerde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                           valueSerde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+            bindings:
+                customer:
+                    consumer:
+                      useNativeDecoding: true
+                    destination: customer
+                    contentType: application/*+avro
+                    #group: order-report-groups    
+                #order:
+                    #consumer:
+                      #useNativeDecoding: true
+                    #destination: order
+                    #contentType: application/*+avro
+                    #group: order-report-groups                               
+
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/elasticutilities?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+        url: jdbc:mysql://localhost:3306/patientService?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
         username: root
-        password:
+        password: root
         hikari:
             poolName: Hikari
             auto-commit: false
@@ -70,9 +104,17 @@ spring:
             hibernate.cache.hazelcast.use_lite_member: true
     data:
         elasticsearch:
-            properties:
-                path:
-                    home: target/elasticsearch
+           cluster-name: df16c4fe157c489697dc92dd352ec27c
+           cluster-nodes: https://df16c4fe157c489697dc92dd352ec27c.us-central1.gcp.cloud.es.io:9243
+           properties:
+               path:
+                   logs: target/elasticsearch/log
+                   data: target/elasticsearch/data
+        jest:
+           password: 4zjUoo90jtDIuwOh5jpH7FpN
+           username: elastic
+           readTimeout: 10000
+           uri: https://df16c4fe157c489697dc92dd352ec27c.us-central1.gcp.cloud.es.io:9243
     liquibase:
         contexts: dev
     mail:
