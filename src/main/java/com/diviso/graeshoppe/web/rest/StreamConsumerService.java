@@ -10,8 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 
+import com.diviso.graeshoppe.avro.Customer;
 import com.diviso.graeshoppe.config.MessageBinderConfiguration;
-import com.diviso.graeshoppe.domain.Customer;
+
 import com.diviso.graeshoppe.service.CustomerService;
 
 /*import com.diviso.graeshoppe.order.avro.Order;
