@@ -182,16 +182,16 @@ public class Store {
 	}
 
 	public String getLocation() {
-		return location;
+		return latlon;
 	}
 
-	public Store location(String location) {
-		this.location = location;
+	public Store location(String latlon) {
+		this.latlon = latlon;
 		return this;
 	}
 
 	public void setLocation(String location) {
-		this.location = location;
+		this.latlon = latlon;
 	}
 
 	public String getLocationName() {
@@ -286,11 +286,11 @@ public class Store {
 	}
 
 	public String getPincode() {
-		return pincode;
+		return postCode;
 	}
 
 	public void setPincode(String pincode) {
-		this.pincode = pincode;
+		this.postCode = postCode;
 	}
 
 	public String getHouseNumber() {
