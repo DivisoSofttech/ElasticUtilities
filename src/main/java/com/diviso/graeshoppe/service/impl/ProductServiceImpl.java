@@ -2,10 +2,9 @@ package com.diviso.graeshoppe.service.impl;
 
 import com.diviso.graeshoppe.service.ProductService;
 import com.diviso.graeshoppe.domain.Product;
-import com.diviso.graeshoppe.repository.ProductRepository;
+
 import com.diviso.graeshoppe.repository.search.ProductSearchRepository;
-import com.diviso.graeshoppe.service.dto.Product;
-import com.diviso.graeshoppe.service.mapper.ProductMapper;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
