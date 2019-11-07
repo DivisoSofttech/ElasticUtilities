@@ -89,33 +89,6 @@ public class CommandResource {
     }
 
     /**
-     * GET  /customers : get all the customers.
-     *
-     * @param pageable the pagination information
-     * @return the ResponseEntity with status 200 (OK) and the list of customers in body
-     */
-    @GetMapping("/customers")
-    public ResponseEntity<List<Customer>> getAllCustomers(Pageable pageable) {
-        log.debug("REST request to get a page of Customers");
-        Page<Customer> page = customerService.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/customers");
-        return ResponseEntity.ok().headers(headers).body(page.getContent());
-    }
-
-    /**
-     * GET  /customers/:id : get the "id" customer.
-     *
-     * @param id the id of the customer to retrieve
-     * @return the ResponseEntity with status 200 (OK) and with body the customer, or with status 404 (Not Found)
-     */
-    @GetMapping("/customers/{id}")
-    public ResponseEntity<Customer> getCustomer(@PathVariable Long id) {
-        log.debug("REST request to get Customer : {}", id);
-        Optional<Customer> customer = customerService.findOne(id);
-        return ResponseUtil.wrapOrNotFound(customer);
-    }
-
-    /**
      * DELETE  /customers/:id : delete the "id" customer.
      *
      * @param id the id of the customer to delete
