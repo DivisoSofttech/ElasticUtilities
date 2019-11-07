@@ -10,11 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 
-import com.diviso.graeshoppe.order.avro.Order;
+import com.diviso.graeshoppe.config.MessageBinderConfiguration;
+import com.diviso.graeshoppe.domain.Customer;
+import com.diviso.graeshoppe.service.CustomerService;
+
+/*import com.diviso.graeshoppe.order.avro.Order;
 import com.diviso.graeshoppe.payment.avro.Payment;
-import com.diviso.graeshoppe.report.config.MessageBinderConfiguration;
+
 import com.diviso.graeshoppe.report.service.OrderMasterService;
-import com.diviso.graeshoppe.report.service.dto.OrderMasterDTO;
+import com.diviso.graeshoppe.report.service.dto.OrderMasterDTO;*/
 
 @EnableBinding(MessageBinderConfiguration.class)
 public class StreamConsumerService {
@@ -22,11 +26,11 @@ public class StreamConsumerService {
 	private final Logger LOG = LoggerFactory.getLogger(StreamConsumerService.class);
 
 	@Autowired
-	private OrderMasterService orderMasterService;
+	private CustomerService customerService;
 
-	@SuppressWarnings("static-access")
-	@StreamListener(MessageBinderConfiguration.PAYMENT)
-	public void listenToPayment(KStream<String, Payment> message) {
+	/*@SuppressWarnings("static-access")
+	@StreamListener(MessageBinderConfiguration.CUSTOMER)
+	public void listenToPayment(KStream<String, Customer> message) {
 		message.foreach((key, value) -> {
 			System.out.println("payment Value consumed is " + value);
 			Optional<OrderMasterDTO> orderMaster = orderMasterService.findByOrderNumber(value.getTargetId());
@@ -75,7 +79,7 @@ public class StreamConsumerService {
 					}
 
 				});
-
+*/
 				/*
 				 * try { Thread.sleep(10000l); OrderMasterDTO orderMasterDTO =
 				 * orderMaster.get(); if (!value.getPaymentType().equals("cod")) {
@@ -84,17 +88,17 @@ public class StreamConsumerService {
 				 * } orderMasterService.save(orderMasterDTO); } catch (InterruptedException e) {
 				 * e.printStackTrace(); }
 				 */
-			}
+		/*	}
 
 		});
-	}
-
+	}*/
+/*
 	@StreamListener(MessageBinderConfiguration.ORDER)
 	public void listenToOrder(KStream<String, Order> message) {
 		message.foreach((key, value) -> {
 			System.out.println("order Value consumed is " + value);
 			orderMasterService.convertAndSaveOrderMaster(value);
 		});
-	}
+	}*/
 
 }
