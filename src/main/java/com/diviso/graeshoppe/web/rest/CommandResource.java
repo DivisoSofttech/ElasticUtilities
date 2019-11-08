@@ -61,7 +61,7 @@ public class CommandResource {
         if (customer.getId() != null) {
             throw new BadRequestAlertException("A new customer cannot already have an ID", CUSTOMER_ENTITY, "idexists");
         }
-        Customer result = customerService.save(customer);
+        Customer result = customerService.create(customer);
         return ResponseEntity.created(new URI("/api/customers/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(CUSTOMER_ENTITY, result.getId().toString()))
             .body(result);
@@ -82,7 +82,7 @@ public class CommandResource {
         if (customer.getId() == null) {
             throw new BadRequestAlertException("Invalid id", CUSTOMER_ENTITY, "idnull");
         }
-        Customer result = customerService.save(customer);
+        Customer result = customerService.update(customer);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(CUSTOMER_ENTITY, customer.getId().toString()))
             .body(result);
