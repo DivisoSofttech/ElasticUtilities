@@ -44,15 +44,17 @@ public class Product {
 	private Double maxQuantityLevel;
 
 	private Double storageCost;
-
+//discount
 	private Double discountRate;
-
+//manufacturer
 	private String manufacturerName;
-
+	//brand
 	private String brandName;
-
+//UOM
 	private String unit;
-
+	//Category
+	private Long categoryId;
+	
 	private String categoryName;
 
 	private byte[] categoryImage;
@@ -60,7 +62,7 @@ public class Product {
 	private String categoryImageContentType;
 
 	private String categoryDescription;
-
+//location
 	private String locationName;
 
 	private String latLon;

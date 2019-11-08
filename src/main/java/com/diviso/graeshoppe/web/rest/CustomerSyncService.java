@@ -22,19 +22,33 @@ import com.diviso.graeshoppe.report.service.OrderMasterService;
 import com.diviso.graeshoppe.report.service.dto.OrderMasterDTO;*/
 
 @EnableBinding(MessageBinderConfiguration.class)
-public class StreamConsumerService {
+public class CustomerSyncService {
 
-	private final Logger LOG = LoggerFactory.getLogger(StreamConsumerService.class);
+	private final Logger LOG = LoggerFactory.getLogger(CustomerSyncService.class);
 
 	@Autowired
 	private CustomerService customerService;
 
 	@StreamListener(MessageBinderConfiguration.CUSTOMER)
-	public void listenToPayment(KStream<String, Customer> message) {
+	public void listenToCustomer(KStream<String, Customer> message) {
 		message.foreach((key,value)->{
 			System.out.println("consumed values is "+value);
 		});
 		
+		/*message.foreach((key,customer)->{
+			if(customer.getStatus().equalsIgnoreCase("create")) {
+				
+				
+			} else if (customer.getStatus().equalsIgnoreCase("update")) {
+				
+				
+				
+			} else if(customer.getStatus().equalsIgnoreCase("delete")) {
+				
+				
+				
+			}
+		});*/
 	}
 
 	

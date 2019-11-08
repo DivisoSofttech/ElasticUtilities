@@ -38,19 +38,34 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     /**
-     * Save a customer.
+     * create a customer.
      *
      * @param Customer the entity to save
      * @return the persisted entity
      */
     @Override
-    public Customer save(Customer customer) {
+    public Customer create(Customer customer) {
         log.debug("Request to save Customer : {}", customer);
         
         
         return customerSearchRepository.save(customer);
     }
 
+    /**
+     * update a customer.
+     *
+     * @param Customer the entity to update
+     * @return the persisted entity
+     */
+    @Override
+    public Customer update(Customer customer) {
+        log.debug("Request to update Customer : {}", customer);
+        
+        
+        return customerSearchRepository.save(customer);
+    }
+    
+    
    
     /**
      * Delete the customer by id.

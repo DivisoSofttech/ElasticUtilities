@@ -15,13 +15,24 @@ import java.util.Optional;
 public interface CustomerService {
 
     /**
-     * Save a customer.
+     * create a customer.
      *
-     * @param Customer the entity to save
+     * @param Customer the entity to create
      * @return the persisted entity
      */
-    Customer save(Customer customer);
+    Customer create(Customer customer);
 
+    /**
+     * update a customer.
+     *
+     * @param Customer the entity to update
+     * @return the persisted entity
+     */
+    Customer update(Customer customer);
+    
+    
+    
+    
    
     /**
      * Delete the "id" customer.
