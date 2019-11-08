@@ -8,7 +8,7 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity OrderMaster and its DTO OrderMasterDTO.
  */
-@Mapper
+@Mapper(componentModel = "spring")
 public interface SimpleSourceDestinationMapper  {
 
 	SimpleDestination sourceToDestination(SimpleSource source);
