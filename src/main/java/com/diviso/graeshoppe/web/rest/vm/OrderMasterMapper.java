@@ -1,13 +1,13 @@
 package com.diviso.graeshoppe.web.rest.vm;
 
-import com.diviso.graeshoppe.report.domain.*;
+/*import com.diviso.graeshoppe.report.domain.*;
 import com.diviso.graeshoppe.report.service.dto.OrderMasterDTO;
 
 import org.mapstruct.*;
 
-/**
+*//**
  * Mapper for the entity OrderMaster and its DTO OrderMasterDTO.
- */
+ *//*
 @Mapper(componentModel = "spring", uses = {})
 public interface OrderMasterMapper extends EntityMapper<OrderMasterDTO, OrderMaster> {
 
@@ -23,4 +23,4 @@ public interface OrderMasterMapper extends EntityMapper<OrderMasterDTO, OrderMas
         orderMaster.setId(id);
         return orderMaster;
     }
-}
+}*/
