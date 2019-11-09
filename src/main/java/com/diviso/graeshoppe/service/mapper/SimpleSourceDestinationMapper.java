@@ -1,4 +1,4 @@
-package com.diviso.graeshoppe.web.rest.vm;
+package com.diviso.graeshoppe.service.mapper;
 
 import com.diviso.graeshoppe.domain.*;
 
