@@ -104,7 +104,7 @@ spring:
             hibernate.cache.hazelcast.use_lite_member: true
     data:
         elasticsearch:
-           cluster-name: 34f5010bd0b3471984c0ef305189dcbfss
+           cluster-name: 34f5010bd0b3471984c0ef305189dcbf
            cluster-nodes: https://34f5010bd0b3471984c0ef305189dcbf.us-east-1.aws.found.io:9243/
            properties:
                path:
