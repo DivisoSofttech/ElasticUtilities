@@ -60,7 +60,7 @@ public class Banner {
 
 	@Override
 	public String toString() {
-		return "Banner{" + "id=" + getId() + ", file='" + getFile() + "'" + ", fileLink='" + getFileLink()
+		return "Banner{" + "id=" + getId() + ",  fileLink='" + getFileLink()
 				+ "'" + "}";
 	}
 }

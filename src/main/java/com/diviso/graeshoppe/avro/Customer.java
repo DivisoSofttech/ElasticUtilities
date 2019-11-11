@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Customer extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 6708708624854671697L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Customer\",\"namespace\":\"com.diviso.graeshoppe.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",\"long\"]},{\"name\":\"reference\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"imagelink\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
+  private static final long serialVersionUID = -8430915424350257218L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Customer\",\"namespace\":\"com.diviso.graeshoppe.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",\"long\"]},{\"name\":\"reference\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"image\",\"type\":\"bytes\",\"default\":\"ÿ\"},{\"name\":\"imageLink\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"contact\",\"type\":{\"type\":\"record\",\"name\":\"Contact\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",\"long\"]},{\"name\":\"mobileNumber\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"phoneCode\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"telephone\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -54,8 +54,10 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
   @Deprecated public java.lang.Long id;
   @Deprecated public java.lang.String reference;
   @Deprecated public java.lang.String name;
-  @Deprecated public java.lang.String imagelink;
+  @Deprecated public java.nio.ByteBuffer image;
+  @Deprecated public java.lang.String imageLink;
   @Deprecated public java.lang.String status;
+  @Deprecated public com.diviso.graeshoppe.avro.Contact contact;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -69,15 +71,19 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
    * @param id The new value for id
    * @param reference The new value for reference
    * @param name The new value for name
-   * @param imagelink The new value for imagelink
+   * @param image The new value for image
+   * @param imageLink The new value for imageLink
    * @param status The new value for status
+   * @param contact The new value for contact
    */
-  public Customer(java.lang.Long id, java.lang.String reference, java.lang.String name, java.lang.String imagelink, java.lang.String status) {
+  public Customer(java.lang.Long id, java.lang.String reference, java.lang.String name, java.nio.ByteBuffer image, java.lang.String imageLink, java.lang.String status, com.diviso.graeshoppe.avro.Contact contact) {
     this.id = id;
     this.reference = reference;
     this.name = name;
-    this.imagelink = imagelink;
+    this.image = image;
+    this.imageLink = imageLink;
     this.status = status;
+    this.contact = contact;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -87,8 +93,10 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     case 0: return id;
     case 1: return reference;
     case 2: return name;
-    case 3: return imagelink;
-    case 4: return status;
+    case 3: return image;
+    case 4: return imageLink;
+    case 5: return status;
+    case 6: return contact;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -100,8 +108,10 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     case 0: id = (java.lang.Long)value$; break;
     case 1: reference = (java.lang.String)value$; break;
     case 2: name = (java.lang.String)value$; break;
-    case 3: imagelink = (java.lang.String)value$; break;
-    case 4: status = (java.lang.String)value$; break;
+    case 3: image = (java.nio.ByteBuffer)value$; break;
+    case 4: imageLink = (java.lang.String)value$; break;
+    case 5: status = (java.lang.String)value$; break;
+    case 6: contact = (com.diviso.graeshoppe.avro.Contact)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -155,19 +165,35 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
-   * Gets the value of the 'imagelink' field.
-   * @return The value of the 'imagelink' field.
+   * Gets the value of the 'image' field.
+   * @return The value of the 'image' field.
    */
-  public java.lang.String getImagelink() {
-    return imagelink;
+  public java.nio.ByteBuffer getImage() {
+    return image;
   }
 
   /**
-   * Sets the value of the 'imagelink' field.
+   * Sets the value of the 'image' field.
    * @param value the value to set.
    */
-  public void setImagelink(java.lang.String value) {
-    this.imagelink = value;
+  public void setImage(java.nio.ByteBuffer value) {
+    this.image = value;
+  }
+
+  /**
+   * Gets the value of the 'imageLink' field.
+   * @return The value of the 'imageLink' field.
+   */
+  public java.lang.String getImageLink() {
+    return imageLink;
+  }
+
+  /**
+   * Sets the value of the 'imageLink' field.
+   * @param value the value to set.
+   */
+  public void setImageLink(java.lang.String value) {
+    this.imageLink = value;
   }
 
   /**
@@ -184,6 +210,22 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
    */
   public void setStatus(java.lang.String value) {
     this.status = value;
+  }
+
+  /**
+   * Gets the value of the 'contact' field.
+   * @return The value of the 'contact' field.
+   */
+  public com.diviso.graeshoppe.avro.Contact getContact() {
+    return contact;
+  }
+
+  /**
+   * Sets the value of the 'contact' field.
+   * @param value the value to set.
+   */
+  public void setContact(com.diviso.graeshoppe.avro.Contact value) {
+    this.contact = value;
   }
 
   /**
@@ -221,8 +263,11 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.Long id;
     private java.lang.String reference;
     private java.lang.String name;
-    private java.lang.String imagelink;
+    private java.nio.ByteBuffer image;
+    private java.lang.String imageLink;
     private java.lang.String status;
+    private com.diviso.graeshoppe.avro.Contact contact;
+    private com.diviso.graeshoppe.avro.Contact.Builder contactBuilder;
 
     /** Creates a new Builder */
     private Builder() {
@@ -247,13 +292,24 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
         this.name = data().deepCopy(fields()[2].schema(), other.name);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.imagelink)) {
-        this.imagelink = data().deepCopy(fields()[3].schema(), other.imagelink);
+      if (isValidValue(fields()[3], other.image)) {
+        this.image = data().deepCopy(fields()[3].schema(), other.image);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.status)) {
-        this.status = data().deepCopy(fields()[4].schema(), other.status);
+      if (isValidValue(fields()[4], other.imageLink)) {
+        this.imageLink = data().deepCopy(fields()[4].schema(), other.imageLink);
         fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.status)) {
+        this.status = data().deepCopy(fields()[5].schema(), other.status);
+        fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.contact)) {
+        this.contact = data().deepCopy(fields()[6].schema(), other.contact);
+        fieldSetFlags()[6] = true;
+      }
+      if (other.hasContactBuilder()) {
+        this.contactBuilder = com.diviso.graeshoppe.avro.Contact.newBuilder(other.getContactBuilder());
       }
     }
 
@@ -275,14 +331,23 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
         this.name = data().deepCopy(fields()[2].schema(), other.name);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.imagelink)) {
-        this.imagelink = data().deepCopy(fields()[3].schema(), other.imagelink);
+      if (isValidValue(fields()[3], other.image)) {
+        this.image = data().deepCopy(fields()[3].schema(), other.image);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.status)) {
-        this.status = data().deepCopy(fields()[4].schema(), other.status);
+      if (isValidValue(fields()[4], other.imageLink)) {
+        this.imageLink = data().deepCopy(fields()[4].schema(), other.imageLink);
         fieldSetFlags()[4] = true;
       }
+      if (isValidValue(fields()[5], other.status)) {
+        this.status = data().deepCopy(fields()[5].schema(), other.status);
+        fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.contact)) {
+        this.contact = data().deepCopy(fields()[6].schema(), other.contact);
+        fieldSetFlags()[6] = true;
+      }
+      this.contactBuilder = null;
     }
 
     /**
@@ -403,41 +468,80 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /**
-      * Gets the value of the 'imagelink' field.
+      * Gets the value of the 'image' field.
       * @return The value.
       */
-    public java.lang.String getImagelink() {
-      return imagelink;
+    public java.nio.ByteBuffer getImage() {
+      return image;
     }
 
     /**
-      * Sets the value of the 'imagelink' field.
-      * @param value The value of 'imagelink'.
+      * Sets the value of the 'image' field.
+      * @param value The value of 'image'.
       * @return This builder.
       */
-    public com.diviso.graeshoppe.avro.Customer.Builder setImagelink(java.lang.String value) {
+    public com.diviso.graeshoppe.avro.Customer.Builder setImage(java.nio.ByteBuffer value) {
       validate(fields()[3], value);
-      this.imagelink = value;
+      this.image = value;
       fieldSetFlags()[3] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'imagelink' field has been set.
-      * @return True if the 'imagelink' field has been set, false otherwise.
+      * Checks whether the 'image' field has been set.
+      * @return True if the 'image' field has been set, false otherwise.
       */
-    public boolean hasImagelink() {
+    public boolean hasImage() {
       return fieldSetFlags()[3];
     }
 
 
     /**
-      * Clears the value of the 'imagelink' field.
+      * Clears the value of the 'image' field.
       * @return This builder.
       */
-    public com.diviso.graeshoppe.avro.Customer.Builder clearImagelink() {
-      imagelink = null;
+    public com.diviso.graeshoppe.avro.Customer.Builder clearImage() {
+      image = null;
       fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'imageLink' field.
+      * @return The value.
+      */
+    public java.lang.String getImageLink() {
+      return imageLink;
+    }
+
+    /**
+      * Sets the value of the 'imageLink' field.
+      * @param value The value of 'imageLink'.
+      * @return This builder.
+      */
+    public com.diviso.graeshoppe.avro.Customer.Builder setImageLink(java.lang.String value) {
+      validate(fields()[4], value);
+      this.imageLink = value;
+      fieldSetFlags()[4] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'imageLink' field has been set.
+      * @return True if the 'imageLink' field has been set, false otherwise.
+      */
+    public boolean hasImageLink() {
+      return fieldSetFlags()[4];
+    }
+
+
+    /**
+      * Clears the value of the 'imageLink' field.
+      * @return This builder.
+      */
+    public com.diviso.graeshoppe.avro.Customer.Builder clearImageLink() {
+      imageLink = null;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -455,9 +559,9 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public com.diviso.graeshoppe.avro.Customer.Builder setStatus(java.lang.String value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.status = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this;
     }
 
@@ -466,7 +570,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'status' field has been set, false otherwise.
       */
     public boolean hasStatus() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
 
@@ -476,7 +580,81 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       */
     public com.diviso.graeshoppe.avro.Customer.Builder clearStatus() {
       status = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'contact' field.
+      * @return The value.
+      */
+    public com.diviso.graeshoppe.avro.Contact getContact() {
+      return contact;
+    }
+
+    /**
+      * Sets the value of the 'contact' field.
+      * @param value The value of 'contact'.
+      * @return This builder.
+      */
+    public com.diviso.graeshoppe.avro.Customer.Builder setContact(com.diviso.graeshoppe.avro.Contact value) {
+      validate(fields()[6], value);
+      this.contactBuilder = null;
+      this.contact = value;
+      fieldSetFlags()[6] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'contact' field has been set.
+      * @return True if the 'contact' field has been set, false otherwise.
+      */
+    public boolean hasContact() {
+      return fieldSetFlags()[6];
+    }
+
+    /**
+     * Gets the Builder instance for the 'contact' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public com.diviso.graeshoppe.avro.Contact.Builder getContactBuilder() {
+      if (contactBuilder == null) {
+        if (hasContact()) {
+          setContactBuilder(com.diviso.graeshoppe.avro.Contact.newBuilder(contact));
+        } else {
+          setContactBuilder(com.diviso.graeshoppe.avro.Contact.newBuilder());
+        }
+      }
+      return contactBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'contact' field
+     * @param value The builder instance that must be set.
+     * @return This builder.
+     */
+    public com.diviso.graeshoppe.avro.Customer.Builder setContactBuilder(com.diviso.graeshoppe.avro.Contact.Builder value) {
+      clearContact();
+      contactBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'contact' field has an active Builder instance
+     * @return True if the 'contact' field has an active Builder instance
+     */
+    public boolean hasContactBuilder() {
+      return contactBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'contact' field.
+      * @return This builder.
+      */
+    public com.diviso.graeshoppe.avro.Customer.Builder clearContact() {
+      contact = null;
+      contactBuilder = null;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -488,8 +666,14 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
         record.reference = fieldSetFlags()[1] ? this.reference : (java.lang.String) defaultValue(fields()[1]);
         record.name = fieldSetFlags()[2] ? this.name : (java.lang.String) defaultValue(fields()[2]);
-        record.imagelink = fieldSetFlags()[3] ? this.imagelink : (java.lang.String) defaultValue(fields()[3]);
-        record.status = fieldSetFlags()[4] ? this.status : (java.lang.String) defaultValue(fields()[4]);
+        record.image = fieldSetFlags()[3] ? this.image : (java.nio.ByteBuffer) defaultValue(fields()[3]);
+        record.imageLink = fieldSetFlags()[4] ? this.imageLink : (java.lang.String) defaultValue(fields()[4]);
+        record.status = fieldSetFlags()[5] ? this.status : (java.lang.String) defaultValue(fields()[5]);
+        if (contactBuilder != null) {
+          record.contact = this.contactBuilder.build();
+        } else {
+          record.contact = fieldSetFlags()[6] ? this.contact : (com.diviso.graeshoppe.avro.Contact) defaultValue(fields()[6]);
+        }
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
