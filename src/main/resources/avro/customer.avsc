@@ -44,11 +44,7 @@
 		"type":["null","string"],
 		"default": null},
 		
-		{"name":"image",
-		"type":"bytes",
-		"default":"\u00FF"},
-		
-		
+	
 		
 		{"name":"imageLink",
 		"type":["null","string"],
@@ -58,8 +54,7 @@
 		"type":["null","string"],
 		"default": null},
 		
-		{"name":"contact",
-		"type":"com.diviso.graeshoppe.avro.Contact"}
+		 {"name":"contact","type":["null","com.diviso.graeshoppe.avro.Contact"], "default": null}
 		
 		]
 		

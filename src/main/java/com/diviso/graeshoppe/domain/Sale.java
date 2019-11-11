@@ -15,7 +15,7 @@ import java.util.Set;
 @Document(indexName = "sale")
 public class Sale {
 
-	private static final long serialVersionUID = 1L;
+
 
 	@Id
 
