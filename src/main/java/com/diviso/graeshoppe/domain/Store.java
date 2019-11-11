@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.GeoPointField;
 /**
  * A Store.
  */
@@ -19,12 +20,12 @@ public class Store {
 
 	private String name;
 
-	private byte[] image;
 
-	private String imageContentType;
+
+	private String imageLink;
 
 	private Double totalRating;
-
+	  @GeoPointField
 	private String latlon;
 
 	private String locationName;
@@ -142,30 +143,19 @@ public class Store {
 		this.name = name;
 	}
 
-	public byte[] getImage() {
-		return image;
+
+
+	public String getImageLink() {
+		return imageLink;
 	}
 
-	public Store image(byte[] image) {
-		this.image = image;
+	public Store imageLink(String imageLink) {
+		this.imageLink = imageLink;
 		return this;
 	}
 
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-
-	public String getImageContentType() {
-		return imageContentType;
-	}
-
-	public Store imageContentType(String imageContentType) {
-		this.imageContentType = imageContentType;
-		return this;
-	}
-
-	public void setImageContentType(String imageContentType) {
-		this.imageContentType = imageContentType;
+	public void setImageLink(String imageLink) {
+		this.imageLink = imageLink;
 	}
 
 	public Double getTotalRating() {
@@ -422,6 +412,14 @@ public class Store {
 	public void setPropreitorName(String propreitorName) {
 		this.propreitorName = propreitorName;
 	}
+
+	public Long getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(Long mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
 	// jhipster-needle-entity-add-getters-setters - JHipster will add getters and
 	// setters here, do not remove
 
@@ -447,8 +445,7 @@ public class Store {
 
 	@Override
 	public String toString() {
-		return "Store{" + "id=" + getId() + ", regNo='" + getRegNo() + "'" + ", name='" + getName() + "'" + ", image='"
-				+ getImage() + "'" + ", imageContentType='" + getImageContentType() + "'" + ", totalRating="
+		return "Store{" + "id=" + getId() + ", regNo='" + getRegNo() + "'" + ", name='" + getName() + "'" + ",  imageLink='" + getImageLink() + "'" + ", totalRating="
 				+ getTotalRating() + ", location='" + getLocation() + "'" + ", locationName='" + getLocationName() + "'"
 				+ ", contactNo=" + getMobileNumber() + ", openingTime='" + getOpeningTime() + "'" + ", email='"
 				+ getEmail() + "'" + ", closingTime='" + getClosingTime() + "'" + ", info='" + getInfo() + "'"
@@ -462,11 +459,4 @@ public class Store {
 				+ ", propreitorName='" + getPropreitorName() + "'" + "}";
 	}
 
-	public Long getMobileNumber() {
-		return mobileNumber;
-	}
-
-	public void setMobileNumber(Long mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
 }

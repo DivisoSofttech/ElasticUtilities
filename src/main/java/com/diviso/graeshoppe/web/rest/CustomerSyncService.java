@@ -35,7 +35,10 @@ public class CustomerSyncService {
 			System.out.println("consumed values is "+value);
 		});
 		
-		/*message.foreach((key,customer)->{
+		message.foreach((key,customer)->{
+			
+			customer.
+			
 			if(customer.getStatus().equalsIgnoreCase("create")) {
 				
 				
@@ -48,7 +51,7 @@ public class CustomerSyncService {
 				
 				
 			}
-		});*/
+		});
 	}
 
 	

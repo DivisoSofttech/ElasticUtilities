@@ -50,7 +50,9 @@
 
 		{"name":"status",
 		"type":["null","string"],
-		"default": null}
+		"default": null},
+		
+		{"name":"contact","type":["null","com.diviso.graeshoppe.avro.Contact"],"default": null}
 		
 		]
 		

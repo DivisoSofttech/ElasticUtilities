@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Customer extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -6988781882404425705L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Customer\",\"namespace\":\"com.diviso.graeshoppe.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",\"long\"]},{\"name\":\"reference\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":\"null\"},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":\"null\"},{\"name\":\"mobileNumber\",\"type\":[\"null\",\"long\"],\"default\":\"0\"},{\"name\":\"phoneCode\",\"type\":[\"null\",\"long\"],\"default\":\"0\"},{\"name\":\"telephone\",\"type\":[\"null\",\"long\"],\"default\":\"0\"},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":\"null\"},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":\"null\"}]}");
+  private static final long serialVersionUID = 6708708624854671697L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Customer\",\"namespace\":\"com.diviso.graeshoppe.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",\"long\"]},{\"name\":\"reference\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"imagelink\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -54,10 +54,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
   @Deprecated public java.lang.Long id;
   @Deprecated public java.lang.String reference;
   @Deprecated public java.lang.String name;
-  @Deprecated public java.lang.Long mobileNumber;
-  @Deprecated public java.lang.Long phoneCode;
-  @Deprecated public java.lang.Long telephone;
-  @Deprecated public java.lang.String email;
+  @Deprecated public java.lang.String imagelink;
   @Deprecated public java.lang.String status;
 
   /**
@@ -72,20 +69,14 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
    * @param id The new value for id
    * @param reference The new value for reference
    * @param name The new value for name
-   * @param mobileNumber The new value for mobileNumber
-   * @param phoneCode The new value for phoneCode
-   * @param telephone The new value for telephone
-   * @param email The new value for email
+   * @param imagelink The new value for imagelink
    * @param status The new value for status
    */
-  public Customer(java.lang.Long id, java.lang.String reference, java.lang.String name, java.lang.Long mobileNumber, java.lang.Long phoneCode, java.lang.Long telephone, java.lang.String email, java.lang.String status) {
+  public Customer(java.lang.Long id, java.lang.String reference, java.lang.String name, java.lang.String imagelink, java.lang.String status) {
     this.id = id;
     this.reference = reference;
     this.name = name;
-    this.mobileNumber = mobileNumber;
-    this.phoneCode = phoneCode;
-    this.telephone = telephone;
-    this.email = email;
+    this.imagelink = imagelink;
     this.status = status;
   }
 
@@ -96,11 +87,8 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     case 0: return id;
     case 1: return reference;
     case 2: return name;
-    case 3: return mobileNumber;
-    case 4: return phoneCode;
-    case 5: return telephone;
-    case 6: return email;
-    case 7: return status;
+    case 3: return imagelink;
+    case 4: return status;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -112,11 +100,8 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     case 0: id = (java.lang.Long)value$; break;
     case 1: reference = (java.lang.String)value$; break;
     case 2: name = (java.lang.String)value$; break;
-    case 3: mobileNumber = (java.lang.Long)value$; break;
-    case 4: phoneCode = (java.lang.Long)value$; break;
-    case 5: telephone = (java.lang.Long)value$; break;
-    case 6: email = (java.lang.String)value$; break;
-    case 7: status = (java.lang.String)value$; break;
+    case 3: imagelink = (java.lang.String)value$; break;
+    case 4: status = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -170,67 +155,19 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
-   * Gets the value of the 'mobileNumber' field.
-   * @return The value of the 'mobileNumber' field.
+   * Gets the value of the 'imagelink' field.
+   * @return The value of the 'imagelink' field.
    */
-  public java.lang.Long getMobileNumber() {
-    return mobileNumber;
+  public java.lang.String getImagelink() {
+    return imagelink;
   }
 
   /**
-   * Sets the value of the 'mobileNumber' field.
+   * Sets the value of the 'imagelink' field.
    * @param value the value to set.
    */
-  public void setMobileNumber(java.lang.Long value) {
-    this.mobileNumber = value;
-  }
-
-  /**
-   * Gets the value of the 'phoneCode' field.
-   * @return The value of the 'phoneCode' field.
-   */
-  public java.lang.Long getPhoneCode() {
-    return phoneCode;
-  }
-
-  /**
-   * Sets the value of the 'phoneCode' field.
-   * @param value the value to set.
-   */
-  public void setPhoneCode(java.lang.Long value) {
-    this.phoneCode = value;
-  }
-
-  /**
-   * Gets the value of the 'telephone' field.
-   * @return The value of the 'telephone' field.
-   */
-  public java.lang.Long getTelephone() {
-    return telephone;
-  }
-
-  /**
-   * Sets the value of the 'telephone' field.
-   * @param value the value to set.
-   */
-  public void setTelephone(java.lang.Long value) {
-    this.telephone = value;
-  }
-
-  /**
-   * Gets the value of the 'email' field.
-   * @return The value of the 'email' field.
-   */
-  public java.lang.String getEmail() {
-    return email;
-  }
-
-  /**
-   * Sets the value of the 'email' field.
-   * @param value the value to set.
-   */
-  public void setEmail(java.lang.String value) {
-    this.email = value;
+  public void setImagelink(java.lang.String value) {
+    this.imagelink = value;
   }
 
   /**
@@ -284,10 +221,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.Long id;
     private java.lang.String reference;
     private java.lang.String name;
-    private java.lang.Long mobileNumber;
-    private java.lang.Long phoneCode;
-    private java.lang.Long telephone;
-    private java.lang.String email;
+    private java.lang.String imagelink;
     private java.lang.String status;
 
     /** Creates a new Builder */
@@ -313,25 +247,13 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
         this.name = data().deepCopy(fields()[2].schema(), other.name);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.mobileNumber)) {
-        this.mobileNumber = data().deepCopy(fields()[3].schema(), other.mobileNumber);
+      if (isValidValue(fields()[3], other.imagelink)) {
+        this.imagelink = data().deepCopy(fields()[3].schema(), other.imagelink);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.phoneCode)) {
-        this.phoneCode = data().deepCopy(fields()[4].schema(), other.phoneCode);
+      if (isValidValue(fields()[4], other.status)) {
+        this.status = data().deepCopy(fields()[4].schema(), other.status);
         fieldSetFlags()[4] = true;
-      }
-      if (isValidValue(fields()[5], other.telephone)) {
-        this.telephone = data().deepCopy(fields()[5].schema(), other.telephone);
-        fieldSetFlags()[5] = true;
-      }
-      if (isValidValue(fields()[6], other.email)) {
-        this.email = data().deepCopy(fields()[6].schema(), other.email);
-        fieldSetFlags()[6] = true;
-      }
-      if (isValidValue(fields()[7], other.status)) {
-        this.status = data().deepCopy(fields()[7].schema(), other.status);
-        fieldSetFlags()[7] = true;
       }
     }
 
@@ -353,25 +275,13 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
         this.name = data().deepCopy(fields()[2].schema(), other.name);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.mobileNumber)) {
-        this.mobileNumber = data().deepCopy(fields()[3].schema(), other.mobileNumber);
+      if (isValidValue(fields()[3], other.imagelink)) {
+        this.imagelink = data().deepCopy(fields()[3].schema(), other.imagelink);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.phoneCode)) {
-        this.phoneCode = data().deepCopy(fields()[4].schema(), other.phoneCode);
+      if (isValidValue(fields()[4], other.status)) {
+        this.status = data().deepCopy(fields()[4].schema(), other.status);
         fieldSetFlags()[4] = true;
-      }
-      if (isValidValue(fields()[5], other.telephone)) {
-        this.telephone = data().deepCopy(fields()[5].schema(), other.telephone);
-        fieldSetFlags()[5] = true;
-      }
-      if (isValidValue(fields()[6], other.email)) {
-        this.email = data().deepCopy(fields()[6].schema(), other.email);
-        fieldSetFlags()[6] = true;
-      }
-      if (isValidValue(fields()[7], other.status)) {
-        this.status = data().deepCopy(fields()[7].schema(), other.status);
-        fieldSetFlags()[7] = true;
       }
     }
 
@@ -493,158 +403,41 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /**
-      * Gets the value of the 'mobileNumber' field.
+      * Gets the value of the 'imagelink' field.
       * @return The value.
       */
-    public java.lang.Long getMobileNumber() {
-      return mobileNumber;
+    public java.lang.String getImagelink() {
+      return imagelink;
     }
 
     /**
-      * Sets the value of the 'mobileNumber' field.
-      * @param value The value of 'mobileNumber'.
+      * Sets the value of the 'imagelink' field.
+      * @param value The value of 'imagelink'.
       * @return This builder.
       */
-    public com.diviso.graeshoppe.avro.Customer.Builder setMobileNumber(java.lang.Long value) {
+    public com.diviso.graeshoppe.avro.Customer.Builder setImagelink(java.lang.String value) {
       validate(fields()[3], value);
-      this.mobileNumber = value;
+      this.imagelink = value;
       fieldSetFlags()[3] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'mobileNumber' field has been set.
-      * @return True if the 'mobileNumber' field has been set, false otherwise.
+      * Checks whether the 'imagelink' field has been set.
+      * @return True if the 'imagelink' field has been set, false otherwise.
       */
-    public boolean hasMobileNumber() {
+    public boolean hasImagelink() {
       return fieldSetFlags()[3];
     }
 
 
     /**
-      * Clears the value of the 'mobileNumber' field.
+      * Clears the value of the 'imagelink' field.
       * @return This builder.
       */
-    public com.diviso.graeshoppe.avro.Customer.Builder clearMobileNumber() {
-      mobileNumber = null;
+    public com.diviso.graeshoppe.avro.Customer.Builder clearImagelink() {
+      imagelink = null;
       fieldSetFlags()[3] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'phoneCode' field.
-      * @return The value.
-      */
-    public java.lang.Long getPhoneCode() {
-      return phoneCode;
-    }
-
-    /**
-      * Sets the value of the 'phoneCode' field.
-      * @param value The value of 'phoneCode'.
-      * @return This builder.
-      */
-    public com.diviso.graeshoppe.avro.Customer.Builder setPhoneCode(java.lang.Long value) {
-      validate(fields()[4], value);
-      this.phoneCode = value;
-      fieldSetFlags()[4] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'phoneCode' field has been set.
-      * @return True if the 'phoneCode' field has been set, false otherwise.
-      */
-    public boolean hasPhoneCode() {
-      return fieldSetFlags()[4];
-    }
-
-
-    /**
-      * Clears the value of the 'phoneCode' field.
-      * @return This builder.
-      */
-    public com.diviso.graeshoppe.avro.Customer.Builder clearPhoneCode() {
-      phoneCode = null;
-      fieldSetFlags()[4] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'telephone' field.
-      * @return The value.
-      */
-    public java.lang.Long getTelephone() {
-      return telephone;
-    }
-
-    /**
-      * Sets the value of the 'telephone' field.
-      * @param value The value of 'telephone'.
-      * @return This builder.
-      */
-    public com.diviso.graeshoppe.avro.Customer.Builder setTelephone(java.lang.Long value) {
-      validate(fields()[5], value);
-      this.telephone = value;
-      fieldSetFlags()[5] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'telephone' field has been set.
-      * @return True if the 'telephone' field has been set, false otherwise.
-      */
-    public boolean hasTelephone() {
-      return fieldSetFlags()[5];
-    }
-
-
-    /**
-      * Clears the value of the 'telephone' field.
-      * @return This builder.
-      */
-    public com.diviso.graeshoppe.avro.Customer.Builder clearTelephone() {
-      telephone = null;
-      fieldSetFlags()[5] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'email' field.
-      * @return The value.
-      */
-    public java.lang.String getEmail() {
-      return email;
-    }
-
-    /**
-      * Sets the value of the 'email' field.
-      * @param value The value of 'email'.
-      * @return This builder.
-      */
-    public com.diviso.graeshoppe.avro.Customer.Builder setEmail(java.lang.String value) {
-      validate(fields()[6], value);
-      this.email = value;
-      fieldSetFlags()[6] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'email' field has been set.
-      * @return True if the 'email' field has been set, false otherwise.
-      */
-    public boolean hasEmail() {
-      return fieldSetFlags()[6];
-    }
-
-
-    /**
-      * Clears the value of the 'email' field.
-      * @return This builder.
-      */
-    public com.diviso.graeshoppe.avro.Customer.Builder clearEmail() {
-      email = null;
-      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -662,9 +455,9 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * @return This builder.
       */
     public com.diviso.graeshoppe.avro.Customer.Builder setStatus(java.lang.String value) {
-      validate(fields()[7], value);
+      validate(fields()[4], value);
       this.status = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -673,7 +466,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       * @return True if the 'status' field has been set, false otherwise.
       */
     public boolean hasStatus() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[4];
     }
 
 
@@ -683,7 +476,7 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
       */
     public com.diviso.graeshoppe.avro.Customer.Builder clearStatus() {
       status = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -695,11 +488,8 @@ public class Customer extends org.apache.avro.specific.SpecificRecordBase implem
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
         record.reference = fieldSetFlags()[1] ? this.reference : (java.lang.String) defaultValue(fields()[1]);
         record.name = fieldSetFlags()[2] ? this.name : (java.lang.String) defaultValue(fields()[2]);
-        record.mobileNumber = fieldSetFlags()[3] ? this.mobileNumber : (java.lang.Long) defaultValue(fields()[3]);
-        record.phoneCode = fieldSetFlags()[4] ? this.phoneCode : (java.lang.Long) defaultValue(fields()[4]);
-        record.telephone = fieldSetFlags()[5] ? this.telephone : (java.lang.Long) defaultValue(fields()[5]);
-        record.email = fieldSetFlags()[6] ? this.email : (java.lang.String) defaultValue(fields()[6]);
-        record.status = fieldSetFlags()[7] ? this.status : (java.lang.String) defaultValue(fields()[7]);
+        record.imagelink = fieldSetFlags()[3] ? this.imagelink : (java.lang.String) defaultValue(fields()[3]);
+        record.status = fieldSetFlags()[4] ? this.status : (java.lang.String) defaultValue(fields()[4]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

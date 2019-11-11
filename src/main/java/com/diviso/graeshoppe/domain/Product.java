@@ -25,9 +25,8 @@ public class Product {
 
 	private Boolean showInCatalogue;
 
-	private byte[] image;
-
-	private String imageContentType;
+	
+	private String imageLink;
 
 	private Boolean isActive;
 
@@ -57,9 +56,9 @@ public class Product {
 	
 	private String categoryName;
 
-	private byte[] categoryImage;
+	
 
-	private String categoryImageContentType;
+	private String categoryImageLink;
 
 	private String categoryDescription;
 //location
@@ -138,30 +137,19 @@ public class Product {
 		this.showInCatalogue = showInCatalogue;
 	}
 
-	public byte[] getImage() {
-		return image;
+	
+
+	public String getImageLink() {
+		return imageLink;
 	}
 
-	public Product image(byte[] image) {
-		this.image = image;
+	public Product imageLink(String imageLink) {
+		this.imageLink = imageLink;
 		return this;
 	}
 
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-
-	public String getImageContentType() {
-		return imageContentType;
-	}
-
-	public Product imageContentType(String imageContentType) {
-		this.imageContentType = imageContentType;
-		return this;
-	}
-
-	public void setImageContentType(String imageContentType) {
-		this.imageContentType = imageContentType;
+	public void setImageLink(String imageLink) {
+		this.imageLink = imageLink;
 	}
 
 	public Boolean isIsActive() {
@@ -335,30 +323,18 @@ public class Product {
 		this.categoryName = categoryName;
 	}
 
-	public byte[] getCategoryImage() {
-		return categoryImage;
+	
+	public String getCategoryImageLink() {
+		return categoryImageLink;
 	}
 
-	public Product categoryImage(byte[] categoryImage) {
-		this.categoryImage = categoryImage;
+	public Product categoryImageLink(String categoryImageLink) {
+		this.categoryImageLink = categoryImageLink;
 		return this;
 	}
 
-	public void setCategoryImage(byte[] categoryImage) {
-		this.categoryImage = categoryImage;
-	}
-
-	public String getCategoryImageContentType() {
-		return categoryImageContentType;
-	}
-
-	public Product categoryImageContentType(String categoryImageContentType) {
-		this.categoryImageContentType = categoryImageContentType;
-		return this;
-	}
-
-	public void setCategoryImageContentType(String categoryImageContentType) {
-		this.categoryImageContentType = categoryImageContentType;
+	public void setCategoryImageLink(String categoryImageLink) {
+		this.categoryImageLink = categoryImageLink;
 	}
 
 	public String getCategoryDescription() {
@@ -503,13 +479,13 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", reference=" + reference + ", name=" + name + ", showInCatalogue="
-				+ showInCatalogue + ", image=" + Arrays.toString(image) + ", imageContentType=" + imageContentType
+				+ showInCatalogue + ",  imageLink=" + imageLink
 				+ ", isActive=" + isActive + ", sku=" + sku + ", idpCode=" + idpCode + ", isServiceItem="
 				+ isServiceItem + ", isAuxilaryItem=" + isAuxilaryItem + ", minQuantityLevel=" + minQuantityLevel
 				+ ", maxQuantityLevel=" + maxQuantityLevel + ", storageCost=" + storageCost + ", discountRate=" + discountRate + ", manufacturerName="
 				+ manufacturerName + ", brandName=" + brandName + ", unit=" + unit + ", categoryName=" + categoryName
-				+ ", categoryImage=" + Arrays.toString(categoryImage) + ", categoryImageContentType="
-				+ categoryImageContentType + ", categoryDescription=" + categoryDescription + ", locationName="
+				+ ", categoryImageLink="
+				+ categoryImageLink + ", categoryDescription=" + categoryDescription + ", locationName="
 				+ locationName + ", latLon=" + latLon + ", addressLine1=" + addressLine1 + ", addressLine2="
 				+ addressLine2 + ", city=" + city + ", state=" + state + ", country=" + country + ", zipcode=" + zipcode
 				+ ", labels=" + labels + "]";

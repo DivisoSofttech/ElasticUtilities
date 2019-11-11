@@ -3,6 +3,8 @@ package com.diviso.graeshoppe.domain;
 import org.springframework.data.annotation.Id;
 
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.GeoPointField;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
@@ -37,9 +39,9 @@ public class StockCurrent {
 
 	private Boolean showInCatalogue;
 
-	private byte[] image;
+	
 
-	private String imageContentType;
+	private String imageLink;
 
 	private Boolean isActive;
 
@@ -68,14 +70,14 @@ public class StockCurrent {
 
 	private String categoryName;
 
-	private byte[] categoryImage;
 
-	private String categoryImageContentType;
+
+	private String categoryImageLink;
 
 	private String categoryDescription;
 
 	private String locationName;
-
+    @GeoPointField
 	private String latLon;
 
 	private String addressLine1;
@@ -124,20 +126,14 @@ public class StockCurrent {
 		this.showInCatalogue = showInCatalogue;
 	}
 
-	public byte[] getImage() {
-		return image;
+	
+
+	public String getImageLink() {
+		return imageLink;
 	}
 
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-
-	public String getImageContentType() {
-		return imageContentType;
-	}
-
-	public void setImageContentType(String imageContentType) {
-		this.imageContentType = imageContentType;
+	public void setImageLink(String imageLink) {
+		this.imageLink = imageLink;
 	}
 
 	public Boolean isIsActive() {
@@ -252,20 +248,14 @@ public class StockCurrent {
 		this.categoryName = categoryName;
 	}
 
-	public byte[] getCategoryImage() {
-		return categoryImage;
+	
+
+	public String getCategoryImageLink() {
+		return categoryImageLink;
 	}
 
-	public void setCategoryImage(byte[] categoryImage) {
-		this.categoryImage = categoryImage;
-	}
-
-	public String getCategoryImageContentType() {
-		return categoryImageContentType;
-	}
-
-	public void setCategoryImageContentType(String categoryImageContentType) {
-		this.categoryImageContentType = categoryImageContentType;
+	public void setCategoryImageLink(String categoryImageLink) {
+		this.categoryImageLink = categoryImageLink;
 	}
 
 	public String getCategoryDescription() {

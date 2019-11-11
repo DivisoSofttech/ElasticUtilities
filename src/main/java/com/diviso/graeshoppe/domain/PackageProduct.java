@@ -24,9 +24,9 @@ public class PackageProduct {
 
 	private Boolean showInCatalogue;
 
-	private byte[] image;
 
-	private String imageContentType;
+
+	private String imageLink;
 
 	private Boolean isActive;
 
@@ -54,9 +54,9 @@ public class PackageProduct {
 
 	private String categoryName;
 
-	private byte[] categoryImage;
+	
 
-	private String categoryImageContentType;
+	private String categoryImageLink;
 
 	private String categoryDescription;
 
@@ -122,20 +122,14 @@ public class PackageProduct {
 		this.showInCatalogue = showInCatalogue;
 	}
 
-	public byte[] getImage() {
-		return image;
+
+
+	public String getImageLink() {
+		return imageLink;
 	}
 
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-
-	public String getImageContentType() {
-		return imageContentType;
-	}
-
-	public void setImageContentType(String imageContentType) {
-		this.imageContentType = imageContentType;
+	public void setImageLink(String imageLink) {
+		this.imageLink = imageLink;
 	}
 
 	public Boolean isIsActive() {
@@ -244,20 +238,14 @@ public class PackageProduct {
 		this.categoryName = categoryName;
 	}
 
-	public byte[] getCategoryImage() {
-		return categoryImage;
+	
+
+	public String getCategoryImageLink() {
+		return categoryImageLink;
 	}
 
-	public void setCategoryImage(byte[] categoryImage) {
-		this.categoryImage = categoryImage;
-	}
-
-	public String getCategoryImageContentType() {
-		return categoryImageContentType;
-	}
-
-	public void setCategoryImageContentType(String categoryImageContentType) {
-		this.categoryImageContentType = categoryImageContentType;
+	public void setCategoryImageLink(String categoryImageLink) {
+		this.categoryImageLink = categoryImageLink;
 	}
 
 	public String getCategoryDescription() {
@@ -365,13 +353,13 @@ public class PackageProduct {
 	@Override
 	public String toString() {
 		return "PackageProduct [id=" + id + ", reference=" + reference + ", name=" + name + ", showInCatalogue="
-				+ showInCatalogue + ", image=" + Arrays.toString(image) + ", imageContentType=" + imageContentType
+				+ showInCatalogue + ", imageLink=" + imageLink
 				+ ", isActive=" + isActive + ", sku=" + sku + ", idpCode=" + idpCode + ", isServiceItem="
 				+ isServiceItem + ", isAuxilaryItem=" + isAuxilaryItem + ", minQuantityLevel=" + minQuantityLevel
 				+ ", maxQuantityLevel=" + maxQuantityLevel + ", storageCost=" + storageCost + ", discountRate=" + discountRate + ", manufacturerName="
 				+ manufacturerName + ", brandName=" + brandName + ", unit=" + unit + ", categoryName=" + categoryName
-				+ ", categoryImage=" + Arrays.toString(categoryImage) + ", categoryImageContentType="
-				+ categoryImageContentType + ", categoryDescription=" + categoryDescription + ", locationName="
+				+ ", categoryImageLink="
+				+ categoryImageLink + ", categoryDescription=" + categoryDescription + ", locationName="
 				+ locationName + ", latLon=" + latLon + ", addressLine1=" + addressLine1 + ", addressLine2="
 				+ addressLine2 + ", city=" + city + ", state=" + state + ", country=" + country + ", zipcode=" + zipcode
 				+ ", labels=" + labels + ", subProducts=" + subProducts + "]";

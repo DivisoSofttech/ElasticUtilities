@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import org.springframework.data.elasticsearch.annotations.GeoPointField;
+
 /**
  * A StockEntry.
  */
@@ -29,7 +31,7 @@ public class StockEntry {
 	private String reasonDescription;
 //location entity
 	private String locationName;
-
+	  @GeoPointField
 	private String latLon;
 
 	

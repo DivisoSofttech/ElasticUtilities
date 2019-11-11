@@ -2,6 +2,8 @@ package com.diviso.graeshoppe.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.GeoPointField;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
@@ -25,9 +27,9 @@ public class SubProduct {
 
 	private String name;
 
-	private byte[] image;
+	
 
-	private String imageContentType;
+	private String imageLink;
 
 	private Boolean isActive;
 
@@ -55,14 +57,14 @@ public class SubProduct {
 
 	private String categoryName;
 
-	private byte[] categoryImage;
+	
 
-	private String categoryImageContentType;
+	private String categoryImageLink;
 
 	private String categoryDescription;
 
 	private String locationName;
-
+	  @GeoPointField
 	private String latLon;
 
 	private String addressLine1;
@@ -162,30 +164,19 @@ public class SubProduct {
 		this.name = name;
 	}
 
-	public byte[] getImage() {
-		return image;
+
+
+	public String getImageLink() {
+		return imageLink;
 	}
 
-	public SubProduct image(byte[] image) {
-		this.image = image;
+	public SubProduct imageLink(String imageLink) {
+		this.imageLink = imageLink;
 		return this;
 	}
 
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-
-	public String getImageContentType() {
-		return imageContentType;
-	}
-
-	public SubProduct imageContentType(String imageContentType) {
-		this.imageContentType = imageContentType;
-		return this;
-	}
-
-	public void setImageContentType(String imageContentType) {
-		this.imageContentType = imageContentType;
+	public void setImageLink(String imageLink) {
+		this.imageLink = imageLink;
 	}
 
 	public Boolean isIsActive() {
@@ -361,30 +352,19 @@ public class SubProduct {
 		this.categoryName = categoryName;
 	}
 
-	public byte[] getCategoryImage() {
-		return categoryImage;
+	
+
+	public String getCategoryImageLink() {
+		return categoryImageLink;
 	}
 
-	public SubProduct categoryImage(byte[] categoryImage) {
-		this.categoryImage = categoryImage;
+	public SubProduct categoryImageLink(String categoryImageLink) {
+		this.categoryImageLink = categoryImageLink;
 		return this;
 	}
 
-	public void setCategoryImage(byte[] categoryImage) {
-		this.categoryImage = categoryImage;
-	}
-
-	public String getCategoryImageContentType() {
-		return categoryImageContentType;
-	}
-
-	public SubProduct categoryImageContentType(String categoryImageContentType) {
-		this.categoryImageContentType = categoryImageContentType;
-		return this;
-	}
-
-	public void setCategoryImageContentType(String categoryImageContentType) {
-		this.categoryImageContentType = categoryImageContentType;
+	public void setCategoryImageLink(String categoryImageLink) {
+		this.categoryImageLink = categoryImageLink;
 	}
 
 	public String getCategoryDescription() {
@@ -530,14 +510,13 @@ public class SubProduct {
 	public String toString() {
 		return "SubProduct{" + "id=" + getId() + ", description='" + getDescription() + "'" + ", quantity="
 				+ getQuantity() + ", reference='" + getReference() + "'" + ", showInCatalogue='" + isShowInCatalogue()
-				+ "'" + ", name='" + getName() + "'" + ", image='" + getImage() + "'" + ", imageContentType='"
-				+ getImageContentType() + "'" + ", isActive='" + isIsActive() + "'" + ", sku='" + getSku() + "'"
+				+ "'" + ", name='" + getName() + "'" + ", imageLink='"
+				+ getImageLink() + "'" + ", isActive='" + isIsActive() + "'" + ", sku='" + getSku() + "'"
 				+ ", idpcode='" + getIdpCode() + "'" + ", isServiceItem='" + isIsServiceItem() + "'" + ", itemType='"
 				+ getItemType() + "'" + ", minQuantityLevel=" + getMinQuantityLevel() + ", maxQuantityLevel="
 				+ getMaxQuantityLevel() + ", storageCost=" + getStorageCost() + ", discountRate=" + getDiscountRate() + ", manufacturerName='"
 				+ getManufacturerName() + "'" + ", brandName='" + getBrandName() + "'" + ", unit='" + getUnit() + "'"
-				+ ", categoryName='" + getCategoryName() + "'" + ", categoryImage='" + getCategoryImage() + "'"
-				+ ", categoryImageContentType='" + getCategoryImageContentType() + "'" + ", categoryDescription='"
+				+ ", categoryName='" + getCategoryName() + "'" + ",  categoryImageLink='" + getCategoryImageLink() + "'" + ", categoryDescription='"
 				+ getCategoryDescription() + "'" + ", locationName='" + getLocationName() + "'" + ", latLon='"
 				+ getLatLon() + "'" + ", addressLine1='" + getAddressLine1() + "'" + ", addressLine2='"
 				+ getAddressLine2() + "'" + ", city='" + getCity() + "'" + ", state='" + getState() + "'"
