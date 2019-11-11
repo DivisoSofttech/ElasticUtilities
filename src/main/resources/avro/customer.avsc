@@ -44,7 +44,14 @@
 		"type":["null","string"],
 		"default": null},
 		
-	
+	{"name":"test1",
+		"type":["null","string"],
+		"default": null},
+		
+		{"name":"test2",
+		"type":["null","string"],
+		"default": null},
+		
 		
 		{"name":"imageLink",
 		"type":["null","string"],
