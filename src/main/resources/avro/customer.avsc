@@ -44,7 +44,9 @@
 		"type":["null","string"],
 		"default": null},
 	
-		
+		{"name":"testName",
+		"type":["null","string"],
+		"default": null},
 		
 		{"name":"imageLink",
 		"type":["null","string"],
