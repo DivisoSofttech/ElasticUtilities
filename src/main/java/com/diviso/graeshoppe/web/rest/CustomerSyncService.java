@@ -66,9 +66,9 @@ public class CustomerSyncService {
 		if (customer.getId() != null) {
 			throw new BadRequestAlertException("A new customer cannot already have an ID", CUSTOMER_ENTITY , "idexists");
 		}
-		com.diviso.graeshoppe.domain.Customer c=	customerMapper.toEntity(customer);
+	//	com.diviso.graeshoppe.domain.Customer c=	customerMapper.toEntity(customer);
 		
-		System.out.println("**************"+c);
+		System.out.println("**************@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	// customerService.create(customer);
 		
 	}
