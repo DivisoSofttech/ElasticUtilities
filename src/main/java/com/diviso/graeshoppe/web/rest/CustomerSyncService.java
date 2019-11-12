@@ -37,9 +37,11 @@ public class CustomerSyncService {
 
 	@StreamListener(MessageBinderConfiguration.CUSTOMER)
 	public void listenToCustomer(KStream<String, Customer> message) {
-	/*	message.foreach((key,value)->{
+		message.foreach((key,value)->{
 			System.out.println("consumed values is "+value);
-		});*/
+		});
+		
+		
 		
 	/*message.foreach((key,customer)->{
 			
