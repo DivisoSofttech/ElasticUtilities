@@ -41,7 +41,7 @@ public class CustomerSyncService {
 			System.out.println("consumed values is "+value);
 		});
 		
-	/*	message.foreach((key,customer)->{
+	message.foreach((key,customer)->{
 			
 		
 			
@@ -57,7 +57,7 @@ public class CustomerSyncService {
 				
 				
 			}
-		});*/
+		});
 	}
 	public void createCustomer( Customer customer) {
 
