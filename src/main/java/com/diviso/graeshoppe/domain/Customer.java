@@ -18,6 +18,22 @@ import java.util.Objects;
 public class Customer {
 	@Id
 	private Long id;
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
+	public Long getContactId() {
+		return contactId;
+	}
+
+	public void setContactId(Long contactId) {
+		this.contactId = contactId;
+	}
+
 	private Long customerId;
 	
 	private String reference;
