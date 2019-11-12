@@ -9,7 +9,7 @@ import org.mapstruct.*;
  * Mapper for the entity Customer and its Avro CustomerAvro.
  */
 @Mapper(componentModel = "spring")
-public interface CustomerMapper extends EntityMapper<com.diviso.graeshoppe.avro.Customer, Customer> {
+public interface CustomerMapper extends EntityMapper<com.diviso.graeshoppe.avro.CustomerInfo, Customer> {
 
     
 
@@ -18,7 +18,7 @@ public interface CustomerMapper extends EntityMapper<com.diviso.graeshoppe.avro.
     @Mapping(target = "notes", ignore = true)
     @Mapping(target = "favouritestores", ignore = true)
     @Mapping(target = "favouriteproducts", ignore = true)*/
-    Customer toEntity(com.diviso.graeshoppe.avro.Customer customer);
+    Customer toEntity(com.diviso.graeshoppe.avro.CustomerInfo customer);
 
     default Customer fromId(Long id) {
         if (id == null) {
