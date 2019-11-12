@@ -14,6 +14,7 @@ import com.diviso.graeshoppe.avro.Customer;
 import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 
 import com.diviso.graeshoppe.service.CustomerService;
+import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 /*import com.diviso.graeshoppe.order.avro.Order;
 import com.diviso.graeshoppe.payment.avro.Payment;
@@ -25,6 +26,7 @@ import com.diviso.graeshoppe.report.service.dto.OrderMasterDTO;*/
 public class CustomerSyncService {
 
 	private final Logger log = LoggerFactory.getLogger(CustomerSyncService.class);
+	 private static final String CUSTOMER_ENTITY = "elasticutilitiesCustomer";
 
 	@Autowired
 	private CustomerService customerService;
@@ -53,20 +55,19 @@ public class CustomerSyncService {
 			}
 		});*/
 	}
-	/*public ResponseEntity<CustomerDTO> createCustomer( Customer customerDTO) throws URISyntaxException {
+	public void createCustomer( Customer customer) {
 
-		log.debug("REST request to save Customer : {}", customerDTO);
+		log.debug("REST request to save Customer : {}", customer);
 
-		if (customerDTO.getId() != null) {
-			throw new BadRequestAlertException("A new customer cannot already have an ID", ENTITY_NAME, "idexists");
+		if (customer.getId() != null) {
+			throw new BadRequestAlertException("A new customer cannot already have an ID", CUSTOMER_ENTITY , "idexists");
 		}
 
 		
-		}
 	 customerService.create(customer);
 		
 	}
-*/
+
 
 	
 
