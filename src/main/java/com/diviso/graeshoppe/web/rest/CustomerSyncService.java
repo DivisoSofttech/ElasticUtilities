@@ -43,7 +43,7 @@ public class CustomerSyncService {
 		
 		
 		
-	/*message.foreach((key,customer)->{
+	message.foreach((key,customer)->{
 			
 		
 			
@@ -59,7 +59,7 @@ public class CustomerSyncService {
 				
 				
 			}
-		});*/
+		});
 	}
 	public void createCustomer( Customer customer) {
 
