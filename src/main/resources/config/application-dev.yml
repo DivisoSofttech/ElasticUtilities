@@ -65,7 +65,7 @@ spring:
                 customer:
                     consumer:
                       useNativeDecoding: true
-                    destination: customers
+                    destination: customer-topic
                     contentType: application/*+avro
                     #group: order-report-groups    
                 #order:
