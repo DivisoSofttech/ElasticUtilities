@@ -10,23 +10,23 @@
 		
 		{"name":"mobileNumber",
 		"type":["null","long"],
-		"default": "null"},
+		"default": null},
 		
 		{"name":"status",
 		"type":["null","string"],
-		"default": "null"},
+		"default": null},
 		
 		{"name":"phoneCode",
 		"type":["null","long"],
-		"default": "null"},
+		"default": null},
 		
 		{"name":"telephone",
 		"type":["null","long"],
-		"default": "null"},
+		"default": null},
 		
 		{"name":"email",
 		"type":["null","string"],
-		"default": "null"}
+		"default": null}
 		
 		]
 	},
@@ -42,19 +42,19 @@
 		
 		{"name":"reference",
 		"type":["null","string"],
-		"default": "null"},
+		"default": null},
 		
 		{"name":"name",
 		"type":["null","string"],
-		"default": "null"},
+		"default": null},
 		
 		{"name":"imageLink",
 		"type":["null","string"],
-		"default": "null"},
+		"default": null},
 
 		{"name":"status",
 		"type":["null","string"],
-		"default": "null"},
+		"default": null},
 		
 		 {"name":"contact",
 		 "type":["null","com.diviso.graeshoppe.avro.Contact"], 
