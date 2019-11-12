@@ -57,7 +57,7 @@
 		"default": null},
 		
 		 {"name":"contact",
-		 "type":["null","com.diviso.graeshoppe.avro.Contact"], 
+		 "type":["null","com.diviso.graeshoppe.avro.ContactInfo"], 
 		 "default": null},
 		
 		{"name":"image",

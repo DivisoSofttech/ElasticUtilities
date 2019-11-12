@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 
-import com.diviso.graeshoppe.avro.Customer;
+import com.diviso.graeshoppe.avro.CustomerInfo;
 import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 
 import com.diviso.graeshoppe.service.CustomerService;
@@ -36,7 +36,7 @@ public class CustomerSyncService {
 	CustomerMapper customerMapper;
 
 	@StreamListener(MessageBinderConfiguration.CUSTOMER)
-	public void listenToCustomer(KStream<String, Customer> message) {
+	public void listenToCustomer(KStream<String, CustomerInfo> message) {
 		message.foreach((key,value)->{
 			System.out.println("consumed values is "+value);
 		});
@@ -61,7 +61,7 @@ public class CustomerSyncService {
 			}
 		});*/
 	}
-	public void createCustomer( Customer customer) {
+	public void createCustomer( CustomerInfo customer) {
 
 		log.debug("REST request to save Customer : {}", customer);
 
