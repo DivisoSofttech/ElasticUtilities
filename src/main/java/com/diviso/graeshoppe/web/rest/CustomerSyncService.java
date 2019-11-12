@@ -14,6 +14,7 @@ import com.diviso.graeshoppe.avro.Customer;
 import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 
 import com.diviso.graeshoppe.service.CustomerService;
+import com.diviso.graeshoppe.service.mapper.CustomerMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 /*import com.diviso.graeshoppe.order.avro.Order;
@@ -30,6 +31,9 @@ public class CustomerSyncService {
 
 	@Autowired
 	private CustomerService customerService;
+	
+	@Autowired
+	CustomerMapper customerMapper;
 
 	@StreamListener(MessageBinderConfiguration.CUSTOMER)
 	public void listenToCustomer(KStream<String, Customer> message) {
@@ -37,7 +41,7 @@ public class CustomerSyncService {
 			System.out.println("consumed values is "+value);
 		});
 		
-		/*message.foreach((key,customer)->{
+		message.foreach((key,customer)->{
 			
 		
 			
@@ -53,7 +57,7 @@ public class CustomerSyncService {
 				
 				
 			}
-		});*/
+		});
 	}
 	public void createCustomer( Customer customer) {
 
@@ -62,9 +66,10 @@ public class CustomerSyncService {
 		if (customer.getId() != null) {
 			throw new BadRequestAlertException("A new customer cannot already have an ID", CUSTOMER_ENTITY , "idexists");
 		}
-
+		com.diviso.graeshoppe.domain.Customer c=	customerMapper.toEntity(customer);
 		
-	 //customerService.create(customer);
+		System.out.println("**************"+c);
+	// customerService.create(customer);
 		
 	}
 
