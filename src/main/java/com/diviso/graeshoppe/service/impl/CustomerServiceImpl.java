@@ -44,11 +44,11 @@ public class CustomerServiceImpl implements CustomerService {
      * @return the persisted entity
      */
     @Override
-    public Customer create(Customer customer) {
+    public void create(Customer customer) {
         log.debug("Request to save Customer : {}", customer);
         
         
-        return customerSearchRepository.save(customer);
+        customerSearchRepository.save(customer);
     }
 
     /**
@@ -58,11 +58,11 @@ public class CustomerServiceImpl implements CustomerService {
      * @return the persisted entity
      */
     @Override
-    public Customer update(Customer customer) {
+    public void update(Customer customer) {
         log.debug("Request to update Customer : {}", customer);
         
         
-        return customerSearchRepository.save(customer);
+         customerSearchRepository.save(customer);
     }
     
     

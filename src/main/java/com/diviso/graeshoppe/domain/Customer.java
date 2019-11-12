@@ -18,7 +18,8 @@ import java.util.Objects;
 public class Customer {
 	@Id
 	private Long id;
-
+	private Long customerId;
+	
 	private String reference;
 
 	private String name;

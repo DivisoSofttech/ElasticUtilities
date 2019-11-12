@@ -24,7 +24,7 @@ import com.diviso.graeshoppe.report.service.dto.OrderMasterDTO;*/
 @EnableBinding(MessageBinderConfiguration.class)
 public class CustomerSyncService {
 
-	private final Logger LOG = LoggerFactory.getLogger(CustomerSyncService.class);
+	private final Logger log = LoggerFactory.getLogger(CustomerSyncService.class);
 
 	@Autowired
 	private CustomerService customerService;
@@ -53,6 +53,20 @@ public class CustomerSyncService {
 			}
 		});*/
 	}
+	/*public ResponseEntity<CustomerDTO> createCustomer( Customer customerDTO) throws URISyntaxException {
+
+		log.debug("REST request to save Customer : {}", customerDTO);
+
+		if (customerDTO.getId() != null) {
+			throw new BadRequestAlertException("A new customer cannot already have an ID", ENTITY_NAME, "idexists");
+		}
+
+		
+		}
+	 customerService.create(customer);
+		
+	}
+*/
 
 	
 

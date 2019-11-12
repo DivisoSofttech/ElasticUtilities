@@ -20,7 +20,7 @@ public interface CustomerService {
      * @param Customer the entity to create
      * @return the persisted entity
      */
-    Customer create(Customer customer);
+    void create(Customer customer);
 
     /**
      * update a customer.
@@ -28,7 +28,7 @@ public interface CustomerService {
      * @param Customer the entity to update
      * @return the persisted entity
      */
-    Customer update(Customer customer);
+    void update(Customer customer);
     
     
     
