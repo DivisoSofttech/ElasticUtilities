@@ -46,7 +46,7 @@ public class CustomerSyncService {
 		
 			
 			if(customer.getStatus().equalsIgnoreCase("create")) {
-				
+				createCustomer( customer) ;
 				
 			} else if (customer.getStatus().equalsIgnoreCase("update")) {
 				
