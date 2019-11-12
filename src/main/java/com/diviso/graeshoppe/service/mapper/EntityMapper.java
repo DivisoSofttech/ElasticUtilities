@@ -11,8 +11,8 @@ import java.util.List;
 
 public interface EntityMapper <A, E> {
 
-    E toEntity(A avro);
+   // E toEntity(A avro);
 
     
-    List <E> toEntity(List<A> avroList);
+    //List <E> toEntity(List<A> avroList);
 }

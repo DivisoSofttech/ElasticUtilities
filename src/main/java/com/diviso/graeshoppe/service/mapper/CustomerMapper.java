@@ -13,7 +13,7 @@ public interface CustomerMapper extends EntityMapper<com.diviso.graeshoppe.avro.
 
     
 
-    @Mapping(source = "contactId", target = "contact")
+   /* @Mapping(source = "contactId", target = "contact")
     @Mapping(target = "addresses", ignore = true)
     @Mapping(target = "notes", ignore = true)
     @Mapping(target = "favouritestores", ignore = true)
@@ -27,5 +27,5 @@ public interface CustomerMapper extends EntityMapper<com.diviso.graeshoppe.avro.
         Customer customer = new Customer();
         customer.setId(id);
         return customer;
-    }
+    }*/
 }
