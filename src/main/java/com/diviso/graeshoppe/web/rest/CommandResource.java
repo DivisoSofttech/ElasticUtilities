@@ -55,7 +55,7 @@ public class CommandResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new customer, or with status 400 (Bad Request) if the customer has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PostMapping("/customers")
+   /* @PostMapping("/customers")
     public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) throws URISyntaxException {
         log.debug("REST request to save Customer : {}", customer);
         if (customer.getId() != null) {
@@ -65,7 +65,7 @@ public class CommandResource {
         return ResponseEntity.created(new URI("/api/customers/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(CUSTOMER_ENTITY, result.getId().toString()))
             .body(result);
-    }
+    }*/
 
     /**
      * PUT  /customers : Updates an existing customer.
@@ -76,7 +76,7 @@ public class CommandResource {
      * or with status 500 (Internal Server Error) if the customer couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PutMapping("/customers")
+ /*   @PutMapping("/customers")
     public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) throws URISyntaxException {
         log.debug("REST request to update Customer : {}", customer);
         if (customer.getId() == null) {
@@ -86,7 +86,7 @@ public class CommandResource {
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(CUSTOMER_ENTITY, customer.getId().toString()))
             .body(result);
-    }
+    }*/
 
     /**
      * DELETE  /customers/:id : delete the "id" customer.
