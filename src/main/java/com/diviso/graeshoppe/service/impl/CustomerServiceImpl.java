@@ -1,7 +1,7 @@
 package com.diviso.graeshoppe.service.impl;
 
 import com.diviso.graeshoppe.service.CustomerService;
-import com.diviso.graeshoppe.avro.Customer;
+import com.diviso.graeshoppe.domain.Customer;
 
 import com.diviso.graeshoppe.repository.search.CustomerSearchRepository;
 

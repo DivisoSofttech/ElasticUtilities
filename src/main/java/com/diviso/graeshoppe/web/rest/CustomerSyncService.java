@@ -64,7 +64,7 @@ public class CustomerSyncService {
 		}
 
 		
-	 customerService.create(customer);
+	 //customerService.create(customer);
 		
 	}
 

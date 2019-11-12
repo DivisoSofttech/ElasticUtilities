@@ -5,7 +5,7 @@ package com.diviso.graeshoppe.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.diviso.graeshoppe.avro.Customer;
+import com.diviso.graeshoppe.domain.Customer;
 
 import java.util.Optional;
 
