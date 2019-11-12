@@ -3,7 +3,7 @@
  	{
 	"namespace":"com.diviso.graeshoppe.avro",
 	"type":"record",
-	"name":"Contact",
+	"name":"ContactInfo",
 	"fields":[
 		{"name":"id",
 		"type":["null","long"]},
@@ -35,7 +35,7 @@
 	{
 	"namespace":"com.diviso.graeshoppe.avro",
 	"type":"record",
-	"name":"Customer",
+	"name":"CustomerInfo",
 	"fields":[
 		{"name":"id",
 		"type":["null","long"]},
