@@ -33,13 +33,13 @@ public class CustomerSyncService {
 
 	@StreamListener(MessageBinderConfiguration.CUSTOMER)
 	public void listenToCustomer(KStream<String, CustomerInfo> message) {
-		message.foreach((key,value)->{
+		/*message.foreach((key,value)->{
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
+		*/
 		
 		
-		
-	/*message.foreach((key,customer)->{
+	message.foreach((key,customer)->{
 			
 		
 			
@@ -55,7 +55,7 @@ public class CustomerSyncService {
 				
 				
 			}
-		});*/
+		});
 	}
 	public void createCustomer( CustomerInfo customer) {
 
@@ -66,8 +66,12 @@ public class CustomerSyncService {
 		}
 	//	com.diviso.graeshoppe.domain.Customer c=	customerMapper.toEntity(customer);
 		
-		System.out.println("**************@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("**************@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+customer);
 	// customerService.create(customer);
+	/*	customer.foreach((key,value)->{
+			System.out.println("consumed key is "+key+"consumed values is "+value);
+		});
+		*/
 		
 	}
 
