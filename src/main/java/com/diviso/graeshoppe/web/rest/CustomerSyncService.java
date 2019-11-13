@@ -17,11 +17,7 @@ import com.diviso.graeshoppe.service.CustomerService;
 import com.diviso.graeshoppe.service.mapper.CustomerMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
-/*import com.diviso.graeshoppe.order.avro.Order;
-import com.diviso.graeshoppe.payment.avro.Payment;
 
-import com.diviso.graeshoppe.report.service.OrderMasterService;
-import com.diviso.graeshoppe.report.service.dto.OrderMasterDTO;*/
 
 @EnableBinding(MessageBinderConfiguration.class)
 public class CustomerSyncService {
@@ -38,7 +34,7 @@ public class CustomerSyncService {
 	@StreamListener(MessageBinderConfiguration.CUSTOMER)
 	public void listenToCustomer(KStream<String, CustomerInfo> message) {
 		message.foreach((key,value)->{
-			System.out.println("consumed values is "+value);
+			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
 		
 		
