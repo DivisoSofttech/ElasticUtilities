@@ -9,11 +9,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
+
+import com.diviso.graeshoppe.domain.Contact;
 import com.diviso.graeshoppe.domain.Customer;
+import com.diviso.graeshoppe.avro.ContactInfo;
 import com.diviso.graeshoppe.avro.CustomerInfo;
 import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 
 import com.diviso.graeshoppe.service.CustomerService;
+import com.diviso.graeshoppe.service.mapper.ContactInfoMapper;
 import com.diviso.graeshoppe.service.mapper.CustomerMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
@@ -30,6 +34,8 @@ public class CustomerSyncService {
 	
 	@Autowired
 	CustomerMapper customerMapper;
+	@Autowired
+	ContactInfoMapper contactInfoMapper;
 
 	@StreamListener(MessageBinderConfiguration.CUSTOMER)
 	public void listenToCustomer(KStream<String, CustomerInfo> message) {
@@ -52,9 +58,13 @@ public class CustomerSyncService {
 				
 			} else if(customer.getStatus().equalsIgnoreCase("delete")) {
 				
-				
+			}else if(customer.getContact().getStatus().equalsIgnoreCase("create")) {
+				//ContactInfo contactInfo=customer.getContact();
+				createContact(customer);
 				
 			}
+			
+			
 		});
 	}
 	public void createCustomer( CustomerInfo customerInfo) {
@@ -67,7 +77,7 @@ public class CustomerSyncService {
 	//	com.diviso.graeshoppe.domain.Customer c=	customerMapper.toEntity(customer);
 		
 		
-		System.out.println("**************@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+customerInfo);
+		//System.out.println("**************@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+customerInfo);
 	 
 		Customer customer=customerMapper.toEntity(customerInfo);
 		customerService.create(customer);
@@ -77,6 +87,12 @@ public class CustomerSyncService {
 		*/
 		
 	}
+	public void createContact(CustomerInfo customerInfo) {
+		/*Customer customer=customerMapper.toEntity(customerInfo);
+		customerService.create(customer);*/
+		System.out.println("**************@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+customerInfo);
+	}
+
 
 
 	
