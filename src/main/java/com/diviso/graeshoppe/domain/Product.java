@@ -25,7 +25,6 @@ public class Product {
 
 	private Boolean showInCatalogue;
 
-	
 	private String imageLink;
 
 	private Boolean isActive;
@@ -43,25 +42,23 @@ public class Product {
 	private Double maxQuantityLevel;
 
 	private Double storageCost;
-//discount
+	// discount
 	private Double discountRate;
-//manufacturer
+	// manufacturer
 	private String manufacturerName;
-	//brand
+	// brand
 	private String brandName;
-//UOM
+	// UOM
 	private String unit;
-	//Category
+	// Category
 	private Long categoryId;
-	
-	private String categoryName;
 
-	
+	private String categoryName;
 
 	private String categoryImageLink;
 
 	private String categoryDescription;
-//location
+	// location
 	private String locationName;
 
 	private String latLon;
@@ -136,8 +133,6 @@ public class Product {
 	public void setShowInCatalogue(Boolean showInCatalogue) {
 		this.showInCatalogue = showInCatalogue;
 	}
-
-	
 
 	public String getImageLink() {
 		return imageLink;
@@ -256,8 +251,6 @@ public class Product {
 		this.storageCost = storageCost;
 	}
 
-	
-
 	public Double getDiscountRate() {
 		return discountRate;
 	}
@@ -323,7 +316,6 @@ public class Product {
 		this.categoryName = categoryName;
 	}
 
-	
 	public String getCategoryImageLink() {
 		return categoryImageLink;
 	}
@@ -479,16 +471,15 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", reference=" + reference + ", name=" + name + ", showInCatalogue="
-				+ showInCatalogue + ",  imageLink=" + imageLink
-				+ ", isActive=" + isActive + ", sku=" + sku + ", idpCode=" + idpCode + ", isServiceItem="
-				+ isServiceItem + ", isAuxilaryItem=" + isAuxilaryItem + ", minQuantityLevel=" + minQuantityLevel
-				+ ", maxQuantityLevel=" + maxQuantityLevel + ", storageCost=" + storageCost + ", discountRate=" + discountRate + ", manufacturerName="
-				+ manufacturerName + ", brandName=" + brandName + ", unit=" + unit + ", categoryName=" + categoryName
-				+ ", categoryImageLink="
-				+ categoryImageLink + ", categoryDescription=" + categoryDescription + ", locationName="
-				+ locationName + ", latLon=" + latLon + ", addressLine1=" + addressLine1 + ", addressLine2="
-				+ addressLine2 + ", city=" + city + ", state=" + state + ", country=" + country + ", zipcode=" + zipcode
-				+ ", labels=" + labels + "]";
+				+ showInCatalogue + ",  imageLink=" + imageLink + ", isActive=" + isActive + ", sku=" + sku
+				+ ", idpCode=" + idpCode + ", isServiceItem=" + isServiceItem + ", isAuxilaryItem=" + isAuxilaryItem
+				+ ", minQuantityLevel=" + minQuantityLevel + ", maxQuantityLevel=" + maxQuantityLevel + ", storageCost="
+				+ storageCost + ", discountRate=" + discountRate + ", manufacturerName=" + manufacturerName
+				+ ", brandName=" + brandName + ", unit=" + unit + ", categoryName=" + categoryName
+				+ ", categoryImageLink=" + categoryImageLink + ", categoryDescription=" + categoryDescription
+				+ ", locationName=" + locationName + ", latLon=" + latLon + ", addressLine1=" + addressLine1
+				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", state=" + state + ", country=" + country
+				+ ", zipcode=" + zipcode + ", labels=" + labels + "]";
 	}
 
 }
