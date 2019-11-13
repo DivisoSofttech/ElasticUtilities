@@ -38,7 +38,7 @@ public class CustomerSyncService {
 	ContactInfoMapper contactInfoMapper;
 
 	@StreamListener(MessageBinderConfiguration.CUSTOMER)
-	public void listenToCustomer(KStream<String, ContactInfo> message) {
+	public void listenToCustomer(KStream<String, CustomerInfo> message) {
 		message.foreach((key,value)->{
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
