@@ -18,16 +18,21 @@ import java.util.Objects;
 public class Customer {
 	@Id
 	private Long id;
-//capture mysql-id
+	// capture mysql-id
 	private Long customerId;
-
-	private String reference;
-
+	// reference
+	private String idpCode;
+	// searchkey
+	private String idpSub;
 	private String name;
 
 	private String imageLink;
-	
+
 	private Contact contact;
+
+	private Set<Product> favouriteProducts = new HashSet<>();
+
+	private Set<Store> favouriteStores = new HashSet<>();
 
 	public Contact getContact() {
 		return contact;
@@ -51,19 +56,6 @@ public class Customer {
 
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
-	}
-
-	public String getReference() {
-		return reference;
-	}
-
-	public Customer reference(String reference) {
-		this.reference = reference;
-		return this;
-	}
-
-	public void setReference(String reference) {
-		this.reference = reference;
 	}
 
 	public String getName() {
@@ -95,6 +87,38 @@ public class Customer {
 	// jhipster-needle-entity-add-getters-setters - JHipster will add getters and
 	// setters here, do not remove
 
+	public String getIdpCode() {
+		return idpCode;
+	}
+
+	public void setIdpCode(String idpCode) {
+		this.idpCode = idpCode;
+	}
+
+	public String getIdpSub() {
+		return idpSub;
+	}
+
+	public void setIdpSub(String idpSub) {
+		this.idpSub = idpSub;
+	}
+
+	public Set<Product> getFavouriteProducts() {
+		return favouriteProducts;
+	}
+
+	public void setFavouriteProducts(Set<Product> favouriteProducts) {
+		this.favouriteProducts = favouriteProducts;
+	}
+
+	public Set<Store> getFavouriteStores() {
+		return favouriteStores;
+	}
+
+	public void setFavouriteStores(Set<Store> favouriteStores) {
+		this.favouriteStores = favouriteStores;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
@@ -114,13 +138,5 @@ public class Customer {
 	public int hashCode() {
 		return Objects.hashCode(getId());
 	}
-
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", customerId=" + customerId + ", reference=" + reference + ", name=" + name
-				+ ", imageLink=" + imageLink + ", contact=" + contact + "]";
-	}
-
-	
 
 }
