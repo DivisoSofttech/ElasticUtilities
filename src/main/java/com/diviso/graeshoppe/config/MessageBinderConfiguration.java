@@ -6,15 +6,18 @@ import org.springframework.cloud.stream.annotation.Input;
 import com.diviso.graeshoppe.avro.CustomerInfo;
 
 
-//import com.diviso.graeshoppe.customer.avro.Customer;
+import com.diviso.graeshoppe.avro.ContactInfo;
 
 public interface MessageBinderConfiguration {
 
 	String CUSTOMER="customer";
 	
-	//String ORDER ="order";
+	String CONTACT ="contact";
 	
 	@Input(CUSTOMER)
 	KStream<String, CustomerInfo> customer();
+	
+	@Input(CONTACT)
+	KStream<String, ContactInfo> contact();
 	
 }

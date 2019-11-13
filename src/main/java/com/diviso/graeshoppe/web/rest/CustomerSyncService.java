@@ -59,15 +59,28 @@ public class CustomerSyncService {
 				
 			} else if(customer.getStatus().equalsIgnoreCase("delete")) {
 				
-			}else if(customer.getContact().getStatus().equalsIgnoreCase("create")) {
-				//ContactInfo contactInfo=customer.getContact();
-				createContact(customer);
-				
 			}
 			
 			
 		});
 	}
+	@StreamListener(MessageBinderConfiguration.CONTACT)
+	public void listenToContact(KStream<String, ContactInfo> contactMessage) {
+		contactMessage.foreach((key,contact)->{
+		if(contact.getStatus().equalsIgnoreCase("create")) {
+			Contact c=contactInfoMapper.toEntity(contact);
+			System.out.println("consumed mapperrrr>>>>>>>>>>>>>>>>>> "+c);
+		}
+		
+		});
+		
+	}
+	
+	
+	
+	
+	
+	
 	public void createCustomer( CustomerInfo customerInfo) {
 
 		log.debug("REST request to save Customer : {}", customerInfo);

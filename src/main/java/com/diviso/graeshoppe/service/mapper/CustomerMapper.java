@@ -8,7 +8,7 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity Customer and its Avro CustomerAvro.
  */
-@Mapper(componentModel = "spring",uses = {ContactInfoMapper.class})
+@Mapper(componentModel = "spring"/*,uses = {ContactInfoMapper.class}*/)
 public interface CustomerMapper extends EntityMapper<com.diviso.graeshoppe.avro.CustomerInfo, Customer> {
 
     

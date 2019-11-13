@@ -18,7 +18,7 @@ import java.util.Objects;
 public class Customer {
 	@Id
 	private Long id;
-
+//capture mysql-id
 	private Long customerId;
 
 	private String reference;

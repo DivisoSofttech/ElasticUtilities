@@ -68,11 +68,11 @@ spring:
                     destination: customer-topic
                     contentType: application/*+avro
                     #group: order-report-groups    
-                #order:
-                    #consumer:
-                      #useNativeDecoding: true
-                    #destination: order
-                    #contentType: application/*+avro
+                contact:
+                    consumer:
+                      useNativeDecoding: true
+                    destination: contact-topic
+                    contentType: application/*+avro
                     #group: order-report-groups                               
 
     datasource:
