@@ -61,13 +61,16 @@ public class CustomerSyncService {
 
 		log.debug("REST request to save Customer : {}", customer);
 
-		/*if (customer.getId() != null) {
-			throw new BadRequestAlertException("A new customer cannot already have an ID", CUSTOMER_ENTITY , "idexists");
-		}*/
+		if (customer.getId() == null) {
+			throw new BadRequestAlertException("A new customer ID", CUSTOMER_ENTITY , "idnull");
+		}
 	//	com.diviso.graeshoppe.domain.Customer c=	customerMapper.toEntity(customer);
 		
+		
 		System.out.println("**************@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+customer);
-	// customerService.create(customer);
+	 
+		customerMapper.
+		customerService.create(customer);
 	/*	customer.foreach((key,value)->{
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});

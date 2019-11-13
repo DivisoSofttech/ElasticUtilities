@@ -18,39 +18,24 @@ import java.util.Objects;
 public class Customer {
 	@Id
 	private Long id;
-	public Long getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-	}
-
-	public Long getContactId() {
-		return contactId;
-	}
-
-	public void setContactId(Long contactId) {
-		this.contactId = contactId;
-	}
 
 	private Long customerId;
-	
+
 	private String reference;
 
 	private String name;
 
-	private Long contactId;
-
 	private String imageLink;
+	
+	private Contact contact;
 
-	private Long mobileNumber;
+	public Contact getContact() {
+		return contact;
+	}
 
-	private Integer phoneCode;
-
-	private Long telephone;
-
-	private String email;
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
 
 	public Long getId() {
 		return id;
@@ -58,6 +43,14 @@ public class Customer {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
 	}
 
 	public String getReference() {
@@ -99,58 +92,6 @@ public class Customer {
 		this.imageLink = imageLink;
 	}
 
-	public Long getMobileNumber() {
-		return mobileNumber;
-	}
-
-	public Customer mobileNumber(Long mobileNumber) {
-		this.mobileNumber = mobileNumber;
-		return this;
-	}
-
-	public void setMobileNumber(Long mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
-
-	public Integer getPhoneCode() {
-		return phoneCode;
-	}
-
-	public Customer phoneCode(Integer phoneCode) {
-		this.phoneCode = phoneCode;
-		return this;
-	}
-
-	public void setPhoneCode(Integer phoneCode) {
-		this.phoneCode = phoneCode;
-	}
-
-	public Long getTelephone() {
-		return telephone;
-	}
-
-	public Customer telephone(Long telephone) {
-		this.telephone = telephone;
-		return this;
-	}
-
-	public void setTelephone(Long telephone) {
-		this.telephone = telephone;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public Customer email(String email) {
-		this.email = email;
-		return this;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	// jhipster-needle-entity-add-getters-setters - JHipster will add getters and
 	// setters here, do not remove
 
@@ -176,9 +117,10 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", reference=" + reference + ", name=" + name + ",  imageLink=" + imageLink
-				+ ", mobileNumber=" + mobileNumber + ", phoneCode=" + phoneCode + ", telephone=" + telephone
-				+ ", email=" + email + "]";
+		return "Customer [id=" + id + ", customerId=" + customerId + ", reference=" + reference + ", name=" + name
+				+ ", imageLink=" + imageLink + ", contact=" + contact + "]";
 	}
+
+	
 
 }
