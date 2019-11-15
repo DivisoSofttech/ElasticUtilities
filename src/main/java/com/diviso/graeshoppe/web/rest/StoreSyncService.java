@@ -11,27 +11,28 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 
 import com.diviso.graeshoppe.domain.Contact;
-import com.diviso.graeshoppe.domain.Store;
-import com.diviso.graeshoppe.avro.CustomerInfo;
+//import com.diviso.graeshoppe.domain.Store;
+
 //import com.diviso.graeshoppe.avro.StoreInfo;
 import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 
 import com.diviso.graeshoppe.service.StoreService;
 import com.diviso.graeshoppe.service.mapper.ContactInfoMapper;
+import com.diviso.graeshoppe.store.avro.Store;
 //import com.diviso.graeshoppe.service.mapper.StoreMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 
-//@EnableBinding(MessageBinderConfiguration.class)
+@EnableBinding(MessageBinderConfiguration.class)
 public class StoreSyncService {
 
 	
 
-	//@StreamListener(MessageBinderConfiguration.STORE)
-//public void listenToStore(KStream<String, CustomerInfo> message) {
-//		message.foreach((key,value)->{
-//			System.out.println("consumed key is "+key+"consumed values is "+value);
-//		});
+	@StreamListener(MessageBinderConfiguration.STORE)
+public void listenToStore(KStream<String, Store> message) {
+		message.foreach((key,value)->{
+			System.out.println("consumed key is "+key+"consumed values is "+value);
+		});
 		
 		
 		
@@ -53,7 +54,7 @@ public class StoreSyncService {
 	
 	
 	
-	
+	}
 	
 	
 
