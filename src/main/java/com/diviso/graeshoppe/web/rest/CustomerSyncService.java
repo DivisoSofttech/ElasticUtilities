@@ -12,8 +12,8 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 
 import com.diviso.graeshoppe.domain.Contact;
 import com.diviso.graeshoppe.domain.Customer;
-import com.diviso.graeshoppe.avro.ContactInfo;
-import com.diviso.graeshoppe.avro.CustomerInfo;
+/*import com.diviso.graeshoppe.avro.ContactInfo;
+import com.diviso.graeshoppe.avro.CustomerInfo;*/
 import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 
 import com.diviso.graeshoppe.service.CustomerService;
@@ -23,10 +23,10 @@ import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 
 
-@EnableBinding(MessageBinderConfiguration.class)
+//@EnableBinding(MessageBinderConfiguration.class)
 public class CustomerSyncService {
 
-	private final Logger log = LoggerFactory.getLogger(CustomerSyncService.class);
+	/*private final Logger log = LoggerFactory.getLogger(CustomerSyncService.class);
 	 private static final String CUSTOMER_ENTITY = "elasticutilitiesCustomer";
 
 	@Autowired
@@ -95,13 +95,13 @@ public class CustomerSyncService {
 		
 	}
 	public void createContact(ContactInfo contactInfo) {
-		/*Customer cont=customerMapper.toEntity(contactInfo);
-		customerService.create(customer);*/
+		Customer cont=customerMapper.toEntity(contactInfo);
+		customerService.create(customer);
 		System.out.println("**************@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+contactInfo);
 	}
 
 
-
+*/
 	
 
 }
