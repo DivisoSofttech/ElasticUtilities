@@ -23,17 +23,17 @@ import com.diviso.graeshoppe.store.avro.Store;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 
-//@EnableBinding(MessageBinderConfiguration.class)
+@EnableBinding(MessageBinderConfiguration.class)
 public class StoreSyncService {
 
 	
 
-/*	@StreamListener(MessageBinderConfiguration.STORE)
+	@StreamListener(MessageBinderConfiguration.STORE)
 public void listenToStore(KStream<String, Store> message) {
 		message.foreach((key,value)->{
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
-		*/
+		
 		
 		
 	
@@ -48,7 +48,7 @@ public void listenToStore(KStream<String, Store> message) {
 		
 		});*/
 		
-	//}
+	}
 	
 	
 	
