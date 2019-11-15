@@ -10,7 +10,7 @@ public class Banner {
 
 	private Long id;
 
-	private String fileLink;
+	private String imageLink;
 
 	public Long getId() {
 
@@ -23,17 +23,17 @@ public class Banner {
 
 
 
-	public String getFileLink() {
-		return fileLink;
+	public String getImageLink() {
+		return imageLink;
 	}
 
-	public Banner fileLink(String fileLink) {
-		this.fileLink = fileLink;
+	public Banner fileLink(String imageLink) {
+		this.imageLink = imageLink;
 		return this;
 	}
 
-	public void setFileLink(String fileLink) {
-		this.fileLink = fileLink;
+	public void setFileLink(String imageLink) {
+		this.imageLink = imageLink;
 	}
 	// jhipster-needle-entity-add-getters-setters - JHipster will add getters and
 	// setters here, do not remove
@@ -60,7 +60,7 @@ public class Banner {
 
 	@Override
 	public String toString() {
-		return "Banner{" + "id=" + getId() + ",  fileLink='" + getFileLink()
+		return "Banner{" + "id=" + getId() + ",  imageLink='" + getImageLink()
 				+ "'" + "}";
 	}
 }

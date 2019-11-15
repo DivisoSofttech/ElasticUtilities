@@ -14,10 +14,14 @@ public interface MessageBinderConfiguration {
 	
 	String CONTACT ="contact";
 	
+	String STORE ="store";
+	
 	@Input(CUSTOMER)
 	KStream<String, CustomerInfo> customer();
 	
 	@Input(CONTACT)
 	KStream<String, ContactInfo> contact();
 	
+	/*@Input(STORE)
+	KStream<String,Store> store();*/
 }

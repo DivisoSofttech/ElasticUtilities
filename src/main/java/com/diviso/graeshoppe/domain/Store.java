@@ -1,13 +1,15 @@
 
 package com.diviso.graeshoppe.domain;
-import java.io.Serializable;
-import java.time.Instant;
+
+
+import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.GeoPointField;
+
 /**
  * A Store.
  */
@@ -16,61 +18,47 @@ public class Store {
 	@Id
 	private Long id;
 
-	private String regNo;
+	private String idpCode;
 
 	private String name;
-
-
 
 	private String imageLink;
 
 	private Double totalRating;
-	  @GeoPointField
+	@GeoPointField
 	private String latlon;
 
 	private String locationName;
 
-	private Long mobileNumber;
+	private Long contactNumber;
 
-	private Instant openingTime;
+	private ZonedDateTime openingTime;
 
 	private String email;
 
-	private Instant closingTime;
+	private ZonedDateTime closingTime;
 
 	private String info;
 
 	private Double minAmount;
 
-	private Instant maxDeliveryTime;
+	private ZonedDateTime maxDeliveryTime;
+	// StoreAddress
+	private StoreAddress storeAddress;
+	// storeSettings
+	private StoreSettings storeSettings;
 
-	private String postCode;
+	// Propreitor
+	private Propreitor propreitor;
 
-	private String houseNumber;
-
-	private String street;
-
-	private String city;
-
-	private String state;
-
-	private String landmark;
-
-	private String addressType;
-
-	private Double deliveryCharge;
-
-	private Double serviceCharge;
-
-	private String orderAcceptType;
-
-	private String propreitorName;
-
+	// PreOrderSettings
+	private PreOrderSettings preOrderSettings;
+	// Banner
 	private Set<Banner> banners = new HashSet<>();
 
 	private Set<UserRatingReview> userRatingReviews = new HashSet<>();
 
-	private Set<DeliveryInfo> deliveryInfos = new HashSet<>();
+	private Set<StoreDeliveryInfo> StoreDeliveryInfos = new HashSet<>();
 	private Set<StoreType> StoreTypes = new HashSet<>();
 
 	// list of StoreType
@@ -91,14 +79,6 @@ public class Store {
 		this.userRatingReviews = userRatingReviews;
 	}
 
-	public Set<DeliveryInfo> getDeliveryInfos() {
-		return deliveryInfos;
-	}
-
-	public void setDeliveryInfos(Set<DeliveryInfo> deliveryInfos) {
-		this.deliveryInfos = deliveryInfos;
-	}
-
 	public Set<StoreType> getStoreTypes() {
 		return StoreTypes;
 	}
@@ -117,19 +97,6 @@ public class Store {
 		this.id = id;
 	}
 
-	public String getRegNo() {
-		return regNo;
-	}
-
-	public Store regNo(String regNo) {
-		this.regNo = regNo;
-		return this;
-	}
-
-	public void setRegNo(String regNo) {
-		this.regNo = regNo;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -142,8 +109,6 @@ public class Store {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
 
 	public String getImageLink() {
 		return imageLink;
@@ -197,19 +162,6 @@ public class Store {
 		this.locationName = locationName;
 	}
 
-	public Instant getOpeningTime() {
-		return openingTime;
-	}
-
-	public Store openingTime(Instant openingTime) {
-		this.openingTime = openingTime;
-		return this;
-	}
-
-	public void setOpeningTime(Instant openingTime) {
-		this.openingTime = openingTime;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -221,19 +173,6 @@ public class Store {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public Instant getClosingTime() {
-		return closingTime;
-	}
-
-	public Store closingTime(Instant closingTime) {
-		this.closingTime = closingTime;
-		return this;
-	}
-
-	public void setClosingTime(Instant closingTime) {
-		this.closingTime = closingTime;
 	}
 
 	public String getInfo() {
@@ -262,164 +201,6 @@ public class Store {
 		this.minAmount = minAmount;
 	}
 
-	public Instant getMaxDeliveryTime() {
-		return maxDeliveryTime;
-	}
-
-	public Store maxDeliveryTime(Instant maxDeliveryTime) {
-		this.maxDeliveryTime = maxDeliveryTime;
-		return this;
-	}
-
-	public void setMaxDeliveryTime(Instant maxDeliveryTime) {
-		this.maxDeliveryTime = maxDeliveryTime;
-	}
-
-	public String getPincode() {
-		return postCode;
-	}
-
-	public void setPincode(String pincode) {
-		this.postCode = postCode;
-	}
-
-	public String getHouseNumber() {
-		return houseNumber;
-	}
-
-	public Store houseNumber(String houseNumber) {
-		this.houseNumber = houseNumber;
-		return this;
-	}
-
-	public void setHouseNumber(String houseNumber) {
-		this.houseNumber = houseNumber;
-	}
-
-	public String getStreet() {
-		return street;
-	}
-
-	public Store Street(String street) {
-		this.street = street;
-		return this;
-	}
-
-	public void setStreet(String street) {
-		this.street = street;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public Store city(String city) {
-		this.city = city;
-		return this;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public Store state(String state) {
-		this.state = state;
-		return this;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getLandmark() {
-		return landmark;
-	}
-
-	public Store landmark(String landmark) {
-		this.landmark = landmark;
-		return this;
-	}
-
-	public void setLandmark(String landmark) {
-		this.landmark = landmark;
-	}
-
-	public String getAddressType() {
-		return addressType;
-	}
-
-	public Store addressType(String addressType) {
-		this.addressType = addressType;
-		return this;
-	}
-
-	public void setAddressType(String addressType) {
-		this.addressType = addressType;
-	}
-
-	public Double getDeliveryCharge() {
-		return deliveryCharge;
-	}
-
-	public Store deliveryCharge(Double deliveryCharge) {
-		this.deliveryCharge = deliveryCharge;
-		return this;
-	}
-
-	public void setDeliveryCharge(Double deliveryCharge) {
-		this.deliveryCharge = deliveryCharge;
-	}
-
-	public Double getServiceCharge() {
-		return serviceCharge;
-	}
-
-	public Store serviceCharge(Double serviceCharge) {
-		this.serviceCharge = serviceCharge;
-		return this;
-	}
-
-	public void setServiceCharge(Double serviceCharge) {
-		this.serviceCharge = serviceCharge;
-	}
-
-	public String getOrderAcceptType() {
-		return orderAcceptType;
-	}
-
-	public Store orderAcceptType(String orderAcceptType) {
-		this.orderAcceptType = orderAcceptType;
-		return this;
-	}
-
-	public void setOrderAcceptType(String orderAcceptType) {
-		this.orderAcceptType = orderAcceptType;
-	}
-
-	public String getPropreitorName() {
-		return propreitorName;
-	}
-
-	public Store propreitorName(String propreitorName) {
-		this.propreitorName = propreitorName;
-		return this;
-	}
-
-	public void setPropreitorName(String propreitorName) {
-		this.propreitorName = propreitorName;
-	}
-
-	public Long getMobileNumber() {
-		return mobileNumber;
-	}
-
-	public void setMobileNumber(Long mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
 	// jhipster-needle-entity-add-getters-setters - JHipster will add getters and
 	// setters here, do not remove
 
@@ -441,22 +222,6 @@ public class Store {
 	@Override
 	public int hashCode() {
 		return Objects.hashCode(getId());
-	}
-
-	@Override
-	public String toString() {
-		return "Store{" + "id=" + getId() + ", regNo='" + getRegNo() + "'" + ", name='" + getName() + "'" + ",  imageLink='" + getImageLink() + "'" + ", totalRating="
-				+ getTotalRating() + ", location='" + getLocation() + "'" + ", locationName='" + getLocationName() + "'"
-				+ ", contactNo=" + getMobileNumber() + ", openingTime='" + getOpeningTime() + "'" + ", email='"
-				+ getEmail() + "'" + ", closingTime='" + getClosingTime() + "'" + ", info='" + getInfo() + "'"
-				+ ", minAmount=" + getMinAmount() + ", maxDeliveryTime='" + getMaxDeliveryTime() + "'" + ", pincode="
-				+ getPincode() + ", houseNoOrBuildingName='" + getHouseNumber() + "'" + ", roadNameAreaOrStreet='"
-				+ getStreet() + "'" + ", city='" + getCity() + "'" + ", state='" + getState() + "'" + ", landmark='"
-				+ getLandmark() + "'" +
-
-				", addressType='" + getAddressType() + "'" + ", deliveryCharge=" + getDeliveryCharge()
-				+ ", serviceCharge=" + getServiceCharge() + ", orderAcceptType='" + getOrderAcceptType() + "'"
-				+ ", propreitorName='" + getPropreitorName() + "'" + "}";
 	}
 
 }

@@ -22,14 +22,13 @@ import com.diviso.graeshoppe.service.mapper.ContactInfoMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 
-
 //@EnableBinding(MessageBinderConfiguration.class)
-public class TestSyncService {
+public class StoreSyncService {
 
 	
 
-	//@StreamListener(MessageBinderConfiguration.CUSTOMER)
-//	public void listenToStore(KStream<String, CustomerInfo> message) {
+	//@StreamListener(MessageBinderConfiguration.STORE)
+//public void listenToStore(KStream<String, CustomerInfo> message) {
 //		message.foreach((key,value)->{
 //			System.out.println("consumed key is "+key+"consumed values is "+value);
 //		});
