@@ -79,7 +79,7 @@ spring:
                       useNativeDecoding: true
                     destination: store
                     contentType: application/*+avro
-                    group: store-groups      
+                    #: store-groups      
 
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
