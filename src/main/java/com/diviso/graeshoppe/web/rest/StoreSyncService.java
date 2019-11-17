@@ -1,5 +1,9 @@
 package com.diviso.graeshoppe.web.rest;
 
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.zone.ZoneRules;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
@@ -34,9 +38,27 @@ public void listenToStore(KStream<String, Store> message) {
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
 		
+	/*message.foreach((key,storeValue)->{
+			
 		
-		
-	
+			
+			if(storeValue.getStatus().equalsIgnoreCase("create")) {
+				//System.out.println("customer.getStatus().equalsIgnoreCase(\"create\")##############");
+				createStore(storeValue) ;
+				
+			} else if (storeValue.getStatus().equalsIgnoreCase("update")) {
+				
+				
+				
+			} else if(storeValue.getStatus().equalsIgnoreCase("delete")) {
+				
+			}
+			
+			
+		});
+
+	*/
+	}
 	/*}
 	@StreamListener(MessageBinderConfiguration.CONTACT)
 	public void listenToContact(KStream<String, ContactInfo> contactMessage) {
@@ -48,13 +70,23 @@ public void listenToStore(KStream<String, Store> message) {
 		
 		});*/
 		
+
+	public void createStore(Store store) {
+
+		/*log.debug("REST request to save Customer : {}", customerInfo);
+
+		if (customerInfo.getId() == null) {
+			throw new BadRequestAlertException("A new customer ID", CUSTOMER_ENTITY , "idnull");
+		}*/
+	
+	//	 com.diviso.graeshoppe.domain.Store	storeEntity=storeAvroMapper.toEntity(store);
+		//customerService.create(customer);
+	
+		
 	}
 	
 	
 	
-	
-	
-//	}
 	
 	
 
