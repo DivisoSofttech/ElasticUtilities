@@ -38,7 +38,7 @@ public void listenToStore(KStream<String, Store> message) {
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
 		
-	message.foreach((key,storeValue)->{
+	/*message.foreach((key,storeValue)->{
 			
 		
 			
@@ -56,7 +56,7 @@ public void listenToStore(KStream<String, Store> message) {
 			
 			
 		});
-
+*/
 	
 	}
 	/*}
