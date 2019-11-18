@@ -1,7 +1,6 @@
 
 package com.diviso.graeshoppe.domain;
 
-
 import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.Objects;
@@ -38,12 +37,92 @@ public class Store {
 
 	private ZonedDateTime closingTime;
 
-
 	private String info;
 
 	private Double minAmount;
 
 	private ZonedDateTime maxDeliveryTime;
+
+	public String getIdpCode() {
+		return idpCode;
+	}
+
+	public void setIdpCode(String idpCode) {
+		this.idpCode = idpCode;
+	}
+
+	public String getLatlon() {
+		return latlon;
+	}
+
+	public void setLatlon(String latlon) {
+		this.latlon = latlon;
+	}
+
+	public Long getContactNumber() {
+		return contactNumber;
+	}
+
+	public void setContactNumber(Long contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+
+	public ZonedDateTime getOpeningTime() {
+		return openingTime;
+	}
+
+	public void setOpeningTime(ZonedDateTime openingTime) {
+		this.openingTime = openingTime;
+	}
+
+	public ZonedDateTime getMaxDeliveryTime() {
+		return maxDeliveryTime;
+	}
+
+	public void setMaxDeliveryTime(ZonedDateTime maxDeliveryTime) {
+		this.maxDeliveryTime = maxDeliveryTime;
+	}
+
+	public StoreAddress getStoreAddress() {
+		return storeAddress;
+	}
+
+	public void setStoreAddress(StoreAddress storeAddress) {
+		this.storeAddress = storeAddress;
+	}
+
+	public StoreSettings getStoreSettings() {
+		return storeSettings;
+	}
+
+	public void setStoreSettings(StoreSettings storeSettings) {
+		this.storeSettings = storeSettings;
+	}
+
+	public Propreitor getPropreitor() {
+		return propreitor;
+	}
+
+	public void setPropreitor(Propreitor propreitor) {
+		this.propreitor = propreitor;
+	}
+
+	public PreOrderSettings getPreOrderSettings() {
+		return preOrderSettings;
+	}
+
+	public void setPreOrderSettings(PreOrderSettings preOrderSettings) {
+		this.preOrderSettings = preOrderSettings;
+	}
+
+	public Set<StoreDeliveryInfo> getStoreDeliveryInfos() {
+		return StoreDeliveryInfos;
+	}
+
+	public void setStoreDeliveryInfos(Set<StoreDeliveryInfo> storeDeliveryInfos) {
+		StoreDeliveryInfos = storeDeliveryInfos;
+	}
+
 	// StoreAddress
 	private StoreAddress storeAddress;
 	// storeSettings
@@ -201,6 +280,7 @@ public class Store {
 	public void setMinAmount(Double minAmount) {
 		this.minAmount = minAmount;
 	}
+
 	public ZonedDateTime getClosingTime() {
 		return closingTime;
 	}
