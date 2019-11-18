@@ -312,4 +312,27 @@ public class Store {
 		return Objects.hashCode(getId());
 	}
 
+	@Override
+	public String toString() {
+		return "Store [id=" + id + ", idpCode=" + idpCode + ", name=" + name + ", imageLink=" + imageLink
+				+ ", totalRating=" + totalRating + ", latlon=" + latlon + ", locationName=" + locationName
+				+ ", contactNumber=" + contactNumber + ", openingTime=" + openingTime + ", email=" + email
+				+ ", closingTime=" + closingTime + ", info=" + info + ", minAmount=" + minAmount + ", maxDeliveryTime="
+				+ maxDeliveryTime + ", storeAddress=" + storeAddress + ", storeSettings=" + storeSettings
+				+ ", propreitor=" + propreitor + ", preOrderSettings=" + preOrderSettings + ", banners=" + banners
+				+ ", userRatingReviews=" + userRatingReviews + ", StoreDeliveryInfos=" + StoreDeliveryInfos
+				+ ", StoreTypes=" + StoreTypes + ", getIdpCode()=" + getIdpCode() + ", getLatlon()=" + getLatlon()
+				+ ", getContactNumber()=" + getContactNumber() + ", getOpeningTime()=" + getOpeningTime()
+				+ ", getMaxDeliveryTime()=" + getMaxDeliveryTime() + ", getStoreAddress()=" + getStoreAddress()
+				+ ", getStoreSettings()=" + getStoreSettings() + ", getPropreitor()=" + getPropreitor()
+				+ ", getPreOrderSettings()=" + getPreOrderSettings() + ", getStoreDeliveryInfos()="
+				+ getStoreDeliveryInfos() + ", getBanners()=" + getBanners() + ", getUserRatingReviews()="
+				+ getUserRatingReviews() + ", getStoreTypes()=" + getStoreTypes() + ", getId()=" + getId()
+				+ ", getName()=" + getName() + ", getImageLink()=" + getImageLink() + ", getTotalRating()="
+				+ getTotalRating() + ", getLocation()=" + getLocation() + ", getLocationName()=" + getLocationName()
+				+ ", getEmail()=" + getEmail() + ", getInfo()=" + getInfo() + ", getMinAmount()=" + getMinAmount()
+				+ ", getClosingTime()=" + getClosingTime() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass()
+				+ ", toString()=" + super.toString() + "]";
+	}
+
 }
