@@ -29,6 +29,8 @@ import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 @EnableBinding(MessageBinderConfiguration.class)
 public class StoreSyncService {
+	@Autowired
+	StoreService storeService ;
     @Autowired
 	StoreAvroMapper storeAvroMapper;
 
@@ -81,7 +83,7 @@ public void listenToStore(KStream<String, Store> message) {
 	
 	 com.diviso.graeshoppe.domain.Store	storeEntity=storeAvroMapper.toEntity(store);
 	 System.out.println("consumed mapperrrr>>>>>>>>>>>>>>>>>> "+storeEntity);
-		//customerService.create(customer);
+		storeService.save(storeEntity);
 	
 		
 	}
