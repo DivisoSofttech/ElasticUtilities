@@ -23,14 +23,14 @@ import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 import com.diviso.graeshoppe.service.StoreService;
 import com.diviso.graeshoppe.service.mapper.ContactInfoMapper;
 import com.diviso.graeshoppe.store.avro.Store;
-//import com.diviso.graeshoppe.service.mapper.StoreMapper;
+import com.diviso.graeshoppe.service.mapper.StoreAvroMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 
 @EnableBinding(MessageBinderConfiguration.class)
 public class StoreSyncService {
-
-	
+    @Autowired
+	StoreAvroMapper storeAvroMapper;
 
 	@StreamListener(MessageBinderConfiguration.STORE)
 public void listenToStore(KStream<String, Store> message) {
@@ -38,7 +38,7 @@ public void listenToStore(KStream<String, Store> message) {
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
 		
-	/*message.foreach((key,storeValue)->{
+	message.foreach((key,storeValue)->{
 			
 		
 			
@@ -57,7 +57,7 @@ public void listenToStore(KStream<String, Store> message) {
 			
 		});
 
-	*/
+	
 	}
 	/*}
 	@StreamListener(MessageBinderConfiguration.CONTACT)
@@ -79,7 +79,8 @@ public void listenToStore(KStream<String, Store> message) {
 			throw new BadRequestAlertException("A new customer ID", CUSTOMER_ENTITY , "idnull");
 		}*/
 	
-	//	 com.diviso.graeshoppe.domain.Store	storeEntity=storeAvroMapper.toEntity(store);
+	 com.diviso.graeshoppe.domain.Store	storeEntity=storeAvroMapper.toEntity(store);
+	 System.out.println("consumed mapperrrr>>>>>>>>>>>>>>>>>> "+storeEntity);
 		//customerService.create(customer);
 	
 		
