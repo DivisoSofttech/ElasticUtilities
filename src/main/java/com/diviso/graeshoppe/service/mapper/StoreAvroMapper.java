@@ -39,10 +39,10 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
 	//@Mapping(source = "maxDeliveryTime", target = "maxDeliveryTime", qualifiedByName = "zonedDateTimeToLong",ignore=true)
 	
 	//@Mapping(source = "image", ignore=true)
-	 @Mapping(target = "openingTime", source = ".", qualifiedByName="zonedOpeningTime",ignore=true)
+	 @Mapping(target = "openingTime", source = ".", qualifiedByName="zonedOpeningTime")
 	// @Mapping(target = "closingTime", source = ".", qualifiedByName="zonedClosingTime",ignore=true)
-	@Mapping(source = ".", target = "closingTime", qualifiedByName = "zonedClosingTime",ignore=true)
-	 @Mapping(target = "maxDeliveryTime", source = ".", qualifiedByName="zonedMaxDeliveryTime",ignore=true)
+	@Mapping(source = ".", target = "closingTime", qualifiedByName = "zonedClosingTime")
+	 @Mapping(target = "maxDeliveryTime", source = ".", qualifiedByName="zonedMaxDeliveryTime")
 	Store toEntity(com.diviso.graeshoppe.store.avro.Store store);
 	
 	
@@ -58,7 +58,7 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
     
 
     @Named("zonedOpeningTime") 
-    public static ZonedDateTime longTZonedOpeningTime(com.diviso.graeshoppe.store.avro.Store store) { 
+    public static ZonedDateTime longToZonedOpeningTime(com.diviso.graeshoppe.store.avro.Store store) { 
      
    ZoneId zone =   ZoneId.of(store.getZoneId());
       Instant instant = Instant.ofEpochMilli(store.getOpeningTime()); 
