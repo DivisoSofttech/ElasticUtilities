@@ -38,6 +38,7 @@ public class Store {
 
 	private ZonedDateTime closingTime;
 
+
 	private String info;
 
 	private Double minAmount;
@@ -199,6 +200,13 @@ public class Store {
 
 	public void setMinAmount(Double minAmount) {
 		this.minAmount = minAmount;
+	}
+	public ZonedDateTime getClosingTime() {
+		return closingTime;
+	}
+
+	public void setClosingTime(ZonedDateTime closingTime) {
+		this.closingTime = closingTime;
 	}
 
 	// jhipster-needle-entity-add-getters-setters - JHipster will add getters and
