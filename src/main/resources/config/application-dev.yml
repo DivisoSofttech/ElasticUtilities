@@ -77,7 +77,7 @@ spring:
                 store:
                     consumer:
                       useNativeDecoding: true
-                    destination: store
+                    destination: store-topic
                     contentType: application/*+avro
                     #: store-groups 
                 storeAddress:
