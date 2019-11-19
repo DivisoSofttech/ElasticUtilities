@@ -23,13 +23,14 @@ import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 import com.diviso.graeshoppe.service.StoreService;
 import com.diviso.graeshoppe.service.mapper.ContactInfoMapper;
 import com.diviso.graeshoppe.store.avro.Store;
+import com.diviso.graeshoppe.store.avro.StoreAddress;
 import com.diviso.graeshoppe.service.mapper.StoreAddressAvroMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 
-//@EnableBinding(MessageBinderConfiguration.class)
+@EnableBinding(MessageBinderConfiguration.class)
 public class StoreAddressSyncService {
-	/*@Autowired 
+	@Autowired 
 	StoreService storeService ;
     @Autowired
 	StoreAddressAvroMapper storeAddressAvroMapper;
@@ -45,8 +46,8 @@ public void listenToStoreAddress(KStream<String, StoreAddress> storeAddressMessa
 		
 			
 			if(storeAddressValue.getStatus().equalsIgnoreCase("create")) {
-				//System.out.println("customer.getStatus().equalsIgnoreCase(\"create\")##############");
-				createStore(storeAddressValue) ;
+				
+				createStoreAddress(storeAddressValue) ;
 				
 			} else if (storeAddressValue.getStatus().equalsIgnoreCase("update")) {
 				
@@ -61,25 +62,17 @@ public void listenToStoreAddress(KStream<String, StoreAddress> storeAddressMessa
 
 	
 	}
-	}
-	@StreamListener(MessageBinderConfiguration.CONTACT)
-	public void listenToContact(KStream<String, ContactInfo> contactMessage) {
-		contactMessage.foreach((key,contact)->{
-		if(contact.getStatus().equalsIgnoreCase("create")) {
-			Contact c=contactInfoMapper.toEntity(contact);
-			System.out.println("consumed mapperrrr>>>>>>>>>>>>>>>>>> "+c);
-		}
-		
-		});
+	
+	
 		
 
 	public void createStoreAddress(StoreAddress storeAddress) {
 
-		log.debug("REST request to save Customer : {}", customerInfo);
+		/*log.debug("REST request to save Customer : {}", customerInfo);
 
 		if (customerInfo.getId() == null) {
 			throw new BadRequestAlertException("A new customer ID", CUSTOMER_ENTITY , "idnull");
-		}
+		}*/
 	
 	 com.diviso.graeshoppe.domain.StoreAddress	storeAddressEntity=storeAddressAvroMapper.toEntity(storeAddress);
 	 System.out.println("consumed mapperrrr>>>>>>>>>>>>>>>>>> "+storeAddressEntity);
@@ -92,7 +85,6 @@ public void listenToStoreAddress(KStream<String, StoreAddress> storeAddressMessa
 	
 	
 	
-*/	
 	
 
 }
