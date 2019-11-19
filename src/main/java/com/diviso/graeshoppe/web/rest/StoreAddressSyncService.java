@@ -41,11 +41,11 @@ public void listenToStoreAddress(KStream<String, StoreAddress> storeAddressMessa
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
 		
-		storeAddressMessage.foreach((key,storeAddressValue)->{
+	//	storeAddressMessage.foreach((key,storeAddressValue)->{
 			
 		
 			
-			if(storeAddressValue.getStatus().equalsIgnoreCase("create")) {
+			/*if(storeAddressValue.getStatus().equalsIgnoreCase("create")) {
 				
 				createStoreAddress(storeAddressValue) ;
 				
@@ -60,7 +60,7 @@ public void listenToStoreAddress(KStream<String, StoreAddress> storeAddressMessa
 			
 		});
 
-	
+	*/
 	}
 	
 	

@@ -5,6 +5,7 @@ import org.springframework.cloud.stream.annotation.Input;
 
 //import com.diviso.graeshoppe.avro.CustomerInfo;
 import com.diviso.graeshoppe.store.avro.Store;
+import com.diviso.graeshoppe.store.avro.StoreAddress;
 //import com.diviso.graeshoppe.avro.ContactInfo;
 
 public interface MessageBinderConfiguration {
@@ -26,5 +27,5 @@ public interface MessageBinderConfiguration {
 	@Input(STORE)
 	KStream<String,Store> store();
 	@Input(STORE_ADDRESS)
-	KStream<String,Store> storeAddressIn();
+	KStream<String,StoreAddress> storeAddressIn();
 }
