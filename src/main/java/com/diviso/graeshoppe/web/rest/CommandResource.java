@@ -175,12 +175,12 @@ public class CommandResource {
      * @param id the id of the Store to delete
      * @return the ResponseEntity with status 200 (OK)
      */
-    @DeleteMapping("/stores/{id}")
+   /* @DeleteMapping("/stores/{id}")
     public ResponseEntity<Void> deleteStore(@PathVariable Long id) {
         log.debug("REST request to delete Store : {}", id);
         storeService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(Store_ENTITY, id.toString())).build();
-    }
+    }*/
    
 	
 }

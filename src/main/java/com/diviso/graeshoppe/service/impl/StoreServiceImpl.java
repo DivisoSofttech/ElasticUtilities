@@ -83,12 +83,12 @@ public class StoreServiceImpl implements StoreService {
      *
      * @param id the id of the entity
      */
-    @Override
+   /* @Override
     public void delete(Long id) {
         log.debug("Request to delete Store : {}", id);   
        
         storeSearchRepository.deleteById(id);
-    }
+    }*/
 
    
     
