@@ -12,7 +12,7 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity Store and its DTO StoreDTO.
  */
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",uses = {StoreAddressAvroMapper.class})
 public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.avro.Store, Store> {
 
 	@Mapping(target = "openingTime", source = ".", qualifiedByName = "zonedOpeningTime")

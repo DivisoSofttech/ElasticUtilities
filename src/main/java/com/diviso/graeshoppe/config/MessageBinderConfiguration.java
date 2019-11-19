@@ -13,7 +13,9 @@ public interface MessageBinderConfiguration {
 	
 	String CONTACT ="contact";
 	
-	String STORE ="store";
+	String STORE ="store"; 
+	
+	String STORE_ADDRESS="storeAddress";
 	
 	/*@Input(CUSTOMER)
 	KStream<String, CustomerInfo> customer();
@@ -23,4 +25,6 @@ public interface MessageBinderConfiguration {
 	*/
 	@Input(STORE)
 	KStream<String,Store> store();
+	@Input(STORE_ADDRESS)
+	KStream<String,Store> storeAddressIn();
 }

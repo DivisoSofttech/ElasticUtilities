@@ -44,6 +44,29 @@ public class Store {
 	private Double minAmount;
 
 	private ZonedDateTime maxDeliveryTime;
+	// StoreAddress
+	private StoreAddress storeAddress;
+	// storeSettings
+	private StoreSettings storeSettings;
+
+	// Propreitor
+	private Propreitor propreitor;
+
+	// PreOrderSettings
+	private PreOrderSettings preOrderSettings;
+	// Banner
+	private Set<Banner> banners = new HashSet<>();
+
+	private Set<UserRatingReview> userRatingReviews = new HashSet<>();
+
+	private Set<StoreDeliveryInfo> StoreDeliveryInfos = new HashSet<>();
+	private Set<StoreType> StoreTypes = new HashSet<>();
+
+	// list of StoreType
+
+	public Set<Banner> getBanners() {
+		return banners;
+	}
 
 	public String getIdpCode() {
 		return idpCode;
@@ -133,29 +156,7 @@ public class Store {
 		StoreDeliveryInfos = storeDeliveryInfos;
 	}
 
-	// StoreAddress
-	private StoreAddress storeAddress;
-	// storeSettings
-	private StoreSettings storeSettings;
 
-	// Propreitor
-	private Propreitor propreitor;
-
-	// PreOrderSettings
-	private PreOrderSettings preOrderSettings;
-	// Banner
-	private Set<Banner> banners = new HashSet<>();
-
-	private Set<UserRatingReview> userRatingReviews = new HashSet<>();
-
-	private Set<StoreDeliveryInfo> StoreDeliveryInfos = new HashSet<>();
-	private Set<StoreType> StoreTypes = new HashSet<>();
-
-	// list of StoreType
-
-	public Set<Banner> getBanners() {
-		return banners;
-	}
 
 	public void setBanners(Set<Banner> banners) {
 		this.banners = banners;
