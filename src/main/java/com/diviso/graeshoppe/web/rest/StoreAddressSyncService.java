@@ -15,7 +15,7 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 
 import com.diviso.graeshoppe.domain.Contact;
-//import com.diviso.graeshoppe.domain.Store;
+
 
 //import com.diviso.graeshoppe.avro.StoreInfo;
 import com.diviso.graeshoppe.config.MessageBinderConfiguration;
@@ -27,15 +27,15 @@ import com.diviso.graeshoppe.service.mapper.StoreAddressAvroMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
 
-@EnableBinding(MessageBinderConfiguration.class)
+//@EnableBinding(MessageBinderConfiguration.class)
 public class StoreAddressSyncService {
-	@Autowired
+	/*@Autowired 
 	StoreService storeService ;
     @Autowired
 	StoreAddressAvroMapper storeAddressAvroMapper;
 
 	@StreamListener(MessageBinderConfiguration.STORE_ADDRESS)
-public void listenToStore(KStream<String, Store> storeAddressMessage) {
+public void listenToStoreAddress(KStream<String, StoreAddress> storeAddressMessage) {
 		storeAddressMessage.foreach((key,value)->{
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
@@ -61,7 +61,7 @@ public void listenToStore(KStream<String, Store> storeAddressMessage) {
 
 	
 	}
-	/*}
+	}
 	@StreamListener(MessageBinderConfiguration.CONTACT)
 	public void listenToContact(KStream<String, ContactInfo> contactMessage) {
 		contactMessage.foreach((key,contact)->{
@@ -70,27 +70,29 @@ public void listenToStore(KStream<String, Store> storeAddressMessage) {
 			System.out.println("consumed mapperrrr>>>>>>>>>>>>>>>>>> "+c);
 		}
 		
-		});*/
+		});
 		
 
-	public void createStore(Store store) {
+	public void createStoreAddress(StoreAddress storeAddress) {
 
-		/*log.debug("REST request to save Customer : {}", customerInfo);
+		log.debug("REST request to save Customer : {}", customerInfo);
 
 		if (customerInfo.getId() == null) {
 			throw new BadRequestAlertException("A new customer ID", CUSTOMER_ENTITY , "idnull");
-		}*/
+		}
 	
-	 com.diviso.graeshoppe.domain.Store	storeEntity=storeAvroMapper.toEntity(store);
-	 System.out.println("consumed mapperrrr>>>>>>>>>>>>>>>>>> "+storeEntity);
-		storeService.save(storeEntity);
+	 com.diviso.graeshoppe.domain.StoreAddress	storeAddressEntity=storeAddressAvroMapper.toEntity(storeAddress);
+	 System.out.println("consumed mapperrrr>>>>>>>>>>>>>>>>>> "+storeAddressEntity);
+	 com.diviso.graeshoppe.domain.Store  s= new com.diviso.graeshoppe.domain.Store();
+	 s.setStoreAddress(storeAddressEntity);
+		storeService.save(s);
 	
 		
 	}
 	
 	
 	
-	
+*/	
 	
 
 }
