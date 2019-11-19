@@ -25,7 +25,7 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
 			return null;
 		}
 		Store store = new Store();
-		store.setId(id);
+	//	store.setId(id);
 		return store;
 	}
 

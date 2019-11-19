@@ -112,9 +112,9 @@ public class CommandResource {
     @PostMapping("/stores")
     public ResponseEntity<Store> createStore(@RequestBody Store Store) throws URISyntaxException {
         log.debug("REST request to save Store : {}", Store);
-        if (Store.getId() != null) {
+       /* if (Store.getId() != null) {
             throw new BadRequestAlertException("A new store cannot already have an ID", Store_ENTITY, "idexists");
-        }
+        }*/
         Store result = storeService.save(Store);
         return ResponseEntity.created(new URI("/api/stores/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(Store_ENTITY, result.getId().toString()))

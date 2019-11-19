@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 /**
  * Spring Data Elasticsearch repository for the Stores entity.
  */
-public interface StoreSearchRepository extends ElasticsearchRepository<Store,Long> {
+public interface StoreSearchRepository extends ElasticsearchRepository<Store,String> {
 	 
 	
 }
