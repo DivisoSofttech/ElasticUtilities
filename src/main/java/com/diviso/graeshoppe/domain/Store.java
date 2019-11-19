@@ -15,7 +15,9 @@ import org.springframework.data.elasticsearch.annotations.GeoPointField;
 @Document(indexName = "store")
 public class Store {
 	@Id
-	private Long id;
+	private String id;
+	
+	private Long storeCode;
 
 	private String idpCode;
 
@@ -81,6 +83,14 @@ public class Store {
 
 	public void setMaxDeliveryTime(ZonedDateTime maxDeliveryTime) {
 		this.maxDeliveryTime = maxDeliveryTime;
+	}
+
+	public Long getStoreCode() {
+		return storeCode;
+	}
+
+	public void setStoreCode(Long storeCode) {
+		this.storeCode = storeCode;
 	}
 
 	public StoreAddress getStoreAddress() {
@@ -169,11 +179,11 @@ public class Store {
 
 	// jhipster-needle-entity-add-field - JHipster will add fields here, do not
 	// remove
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
