@@ -2,7 +2,7 @@ package com.diviso.graeshoppe.service.mapper;
 
 import com.diviso.graeshoppe.domain.*;
 import com.diviso.graeshoppe.repository.search.StoreSearchRepository;
-
+import com.diviso.graeshoppe.service.QueryService;
 
 import org.mapstruct.*;
 import javax.inject.Inject;
@@ -13,13 +13,13 @@ import javax.inject.Inject;
 public abstract class StoreAddressAvroMapper {
 
 	@Inject	
-	 StoreSearchRepository storeSearchRepository;
+	 QueryService queryService;
 
 	 public abstract   StoreAddress toEntity(com.diviso.graeshoppe.store.avro.StoreAddress storeAddress);
-   /* public StoreAddress fromId(Long id) {
+    public StoreAddress fromId(Long id) {
         if (id == null) {
             return null;
         }
-        return storeSearchRepository.findById(id).get();
-    }*/
+        return queryService.findStoreAddressById(id);
+    }
 }

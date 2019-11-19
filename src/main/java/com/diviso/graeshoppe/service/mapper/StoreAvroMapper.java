@@ -20,12 +20,12 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
 	@Mapping(target = "maxDeliveryTime", source = ".", qualifiedByName = "zonedMaxDeliveryTime")
 	Store toEntity(com.diviso.graeshoppe.store.avro.Store store);
 
-	default Store fromStoreCode(Long storeCode) {
-		if (storeCode == null) {
+	default Store fromId(Long id) {
+		if (id == null) {
 			return null;
 		}
 		Store store = new Store();
-		store.setStoreCode(storeCode);
+		store.setId(id);
 		return store;
 	}
 
