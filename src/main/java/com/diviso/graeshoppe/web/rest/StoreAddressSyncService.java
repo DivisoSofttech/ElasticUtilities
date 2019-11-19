@@ -36,7 +36,7 @@ public class StoreAddressSyncService {
 	StoreAddressAvroMapper storeAddressAvroMapper;
 
 	@StreamListener(MessageBinderConfiguration.STORE_ADDRESS)
-public void listenToStoreAddress(KStream<String, StoreAddress> storeAddressMessage) {
+public void listenToStoreAddress(KStream<String,StoreAddress> storeAddressMessage) {
 		storeAddressMessage.foreach((key,value)->{
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
