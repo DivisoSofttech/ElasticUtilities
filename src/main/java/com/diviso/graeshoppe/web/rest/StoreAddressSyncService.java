@@ -22,7 +22,7 @@ import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 
 import com.diviso.graeshoppe.service.StoreService;
 import com.diviso.graeshoppe.service.mapper.ContactInfoMapper;
-import com.diviso.graeshoppe.store.avro.Store;
+import com.diviso.graeshoppe.store.avro.StoreInfo;
 import com.diviso.graeshoppe.store.avro.StoreAddress;
 import com.diviso.graeshoppe.service.mapper.StoreAddressAvroMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;

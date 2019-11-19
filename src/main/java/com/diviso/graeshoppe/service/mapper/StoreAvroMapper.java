@@ -13,12 +13,12 @@ import org.mapstruct.*;
  * Mapper for the entity Store and its DTO StoreDTO.
  */
 @Mapper(componentModel = "spring",uses = {StoreAddressAvroMapper.class})
-public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.avro.Store, Store> {
+public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.avro.StoreInfo, Store> {
 
 	@Mapping(target = "openingTime", source = ".", qualifiedByName = "zonedOpeningTime")
 	@Mapping(source = ".", target = "closingTime", qualifiedByName = "zonedClosingTime")
 	@Mapping(target = "maxDeliveryTime", source = ".", qualifiedByName = "zonedMaxDeliveryTime")
-	Store toEntity(com.diviso.graeshoppe.store.avro.Store store);
+	Store toEntity(com.diviso.graeshoppe.store.avro.StoreInfo store);
 
 	default Store fromId(Long id) {
 		if (id == null) {
@@ -30,7 +30,7 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
 	}
 
 	@Named("zonedOpeningTime")
-	public static ZonedDateTime longToZonedOpeningTime(com.diviso.graeshoppe.store.avro.Store store) {
+	public static ZonedDateTime longToZonedOpeningTime(com.diviso.graeshoppe.store.avro.StoreInfo store) {
 
 		ZoneId zone = ZoneId.of(store.getZoneId());
 		Instant instant = Instant.ofEpochMilli(store.getOpeningTime());
@@ -39,7 +39,7 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
 	}
 
 	@Named("zonedClosingTime")
-	public static ZonedDateTime longToZonedClosingTime(com.diviso.graeshoppe.store.avro.Store store) {
+	public static ZonedDateTime longToZonedClosingTime(com.diviso.graeshoppe.store.avro.StoreInfo store) {
 
 		ZoneId zone = ZoneId.of(store.getZoneId());
 		Instant instant = Instant.ofEpochMilli(store.getClosingTime());
@@ -48,7 +48,7 @@ public interface StoreAvroMapper extends AvroMapper<com.diviso.graeshoppe.store.
 	}
 
 	@Named("zonedMaxDeliveryTime")
-	public static ZonedDateTime longToZonedMaxDeliveryTime(com.diviso.graeshoppe.store.avro.Store store) {
+	public static ZonedDateTime longToZonedMaxDeliveryTime(com.diviso.graeshoppe.store.avro.StoreInfo store) {
 
 		ZoneId zone = ZoneId.of(store.getZoneId());
 		Instant instant = Instant.ofEpochMilli(store.getMaxDeliveryTime());

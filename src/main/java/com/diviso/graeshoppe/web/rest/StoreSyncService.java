@@ -22,7 +22,7 @@ import com.diviso.graeshoppe.config.MessageBinderConfiguration;
 
 import com.diviso.graeshoppe.service.StoreService;
 import com.diviso.graeshoppe.service.mapper.ContactInfoMapper;
-import com.diviso.graeshoppe.store.avro.Store;
+import com.diviso.graeshoppe.store.avro.StoreInfo;
 import com.diviso.graeshoppe.service.mapper.StoreAvroMapper;
 import com.diviso.graeshoppe.web.rest.errors.BadRequestAlertException;
 
@@ -35,7 +35,7 @@ public class StoreSyncService {
 	StoreAvroMapper storeAvroMapper;
 
 	@StreamListener(MessageBinderConfiguration.STORE)
-public void listenToStore(KStream<String,Store> message) {
+public void listenToStore(KStream<String,StoreInfo> message) {
 		message.foreach((key,value)->{
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
@@ -73,7 +73,7 @@ public void listenToStore(KStream<String,Store> message) {
 		});*/
 		
 
-	public void createStore(Store store) {
+	public void createStore(StoreInfo store) {
 
 		/*log.debug("REST request to save Customer : {}", customerInfo);
 
