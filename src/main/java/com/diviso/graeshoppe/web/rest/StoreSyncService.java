@@ -35,7 +35,7 @@ public class StoreSyncService {
 	StoreAvroMapper storeAvroMapper;
 
 	@StreamListener(MessageBinderConfiguration.STORE)
-public void listenToStore(KStream<String, Store> message) {
+public void listenToStore(KStream<String,Store> message) {
 		message.foreach((key,value)->{
 			System.out.println("consumed key is "+key+"consumed values is "+value);
 		});
